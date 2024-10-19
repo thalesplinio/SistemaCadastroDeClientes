@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainmYkdXB.ui'
+## Form generated from reading UI file 'mainhrmKdf.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.8.0
 ##
@@ -63,10 +63,10 @@ class Ui_MainWindow(object):
         self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
         self.verticalLayout_13 = QVBoxLayout()
         self.verticalLayout_13.setObjectName(u"verticalLayout_13")
-        self.label_15 = QLabel(self.gb_enderecos)
-        self.label_15.setObjectName(u"label_15")
+        self.lb_title_cep = QLabel(self.gb_enderecos)
+        self.lb_title_cep.setObjectName(u"lb_title_cep")
 
-        self.verticalLayout_13.addWidget(self.label_15)
+        self.verticalLayout_13.addWidget(self.lb_title_cep)
 
         self.horizontalLayout_17 = QHBoxLayout()
         self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
@@ -92,123 +92,6 @@ class Ui_MainWindow(object):
 
         self.gridLayout_5.addLayout(self.horizontalLayout_16, 0, 1, 1, 1)
 
-        self.horizontalLayout_18 = QHBoxLayout()
-        self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
-        self.lb_separator_5 = QLabel(self.gb_enderecos)
-        self.lb_separator_5.setObjectName(u"lb_separator_5")
-        self.lb_separator_5.setMaximumSize(QSize(1, 200))
-        self.lb_separator_5.setStyleSheet(u"QLabel{\n"
-"	background-color: rgb(181, 181, 181);\n"
-"}")
-
-        self.horizontalLayout_18.addWidget(self.lb_separator_5)
-
-        self.verticalLayout_14 = QVBoxLayout()
-        self.verticalLayout_14.setObjectName(u"verticalLayout_14")
-        self.label_17 = QLabel(self.gb_enderecos)
-        self.label_17.setObjectName(u"label_17")
-
-        self.verticalLayout_14.addWidget(self.label_17)
-
-        self.horizontalLayout_19 = QHBoxLayout()
-        self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
-        self.lb_img_address = QLabel(self.gb_enderecos)
-        self.lb_img_address.setObjectName(u"lb_img_address")
-        self.lb_img_address.setMaximumSize(QSize(24, 24))
-        self.lb_img_address.setPixmap(QPixmap(u"../../assets/img/sign.png"))
-        self.lb_img_address.setScaledContents(True)
-
-        self.horizontalLayout_19.addWidget(self.lb_img_address)
-
-        self.le_endereco = QLineEdit(self.gb_enderecos)
-        self.le_endereco.setObjectName(u"le_endereco")
-
-        self.horizontalLayout_19.addWidget(self.le_endereco)
-
-
-        self.verticalLayout_14.addLayout(self.horizontalLayout_19)
-
-
-        self.horizontalLayout_18.addLayout(self.verticalLayout_14)
-
-
-        self.gridLayout_5.addLayout(self.horizontalLayout_18, 0, 2, 1, 1)
-
-        self.horizontalLayout_20 = QHBoxLayout()
-        self.horizontalLayout_20.setObjectName(u"horizontalLayout_20")
-        self.verticalLayout_15 = QVBoxLayout()
-        self.verticalLayout_15.setObjectName(u"verticalLayout_15")
-        self.label_19 = QLabel(self.gb_enderecos)
-        self.label_19.setObjectName(u"label_19")
-
-        self.verticalLayout_15.addWidget(self.label_19)
-
-        self.horizontalLayout_21 = QHBoxLayout()
-        self.horizontalLayout_21.setObjectName(u"horizontalLayout_21")
-        self.lb_img_city = QLabel(self.gb_enderecos)
-        self.lb_img_city.setObjectName(u"lb_img_city")
-        self.lb_img_city.setMaximumSize(QSize(24, 24))
-        self.lb_img_city.setPixmap(QPixmap(u"../../assets/img/map-location.png"))
-        self.lb_img_city.setScaledContents(True)
-
-        self.horizontalLayout_21.addWidget(self.lb_img_city)
-
-        self.le_cidade = QLineEdit(self.gb_enderecos)
-        self.le_cidade.setObjectName(u"le_cidade")
-
-        self.horizontalLayout_21.addWidget(self.le_cidade)
-
-
-        self.verticalLayout_15.addLayout(self.horizontalLayout_21)
-
-
-        self.horizontalLayout_20.addLayout(self.verticalLayout_15)
-
-
-        self.gridLayout_5.addLayout(self.horizontalLayout_20, 1, 1, 1, 1)
-
-        self.horizontalLayout_24 = QHBoxLayout()
-        self.horizontalLayout_24.setObjectName(u"horizontalLayout_24")
-        self.lb_separator_6 = QLabel(self.gb_enderecos)
-        self.lb_separator_6.setObjectName(u"lb_separator_6")
-        self.lb_separator_6.setMaximumSize(QSize(1, 200))
-        self.lb_separator_6.setStyleSheet(u"QLabel{\n"
-"	background-color: rgb(181, 181, 181);\n"
-"}")
-
-        self.horizontalLayout_24.addWidget(self.lb_separator_6)
-
-        self.verticalLayout_17 = QVBoxLayout()
-        self.verticalLayout_17.setObjectName(u"verticalLayout_17")
-        self.label_28 = QLabel(self.gb_enderecos)
-        self.label_28.setObjectName(u"label_28")
-
-        self.verticalLayout_17.addWidget(self.label_28)
-
-        self.horizontalLayout_25 = QHBoxLayout()
-        self.horizontalLayout_25.setObjectName(u"horizontalLayout_25")
-        self.lb_img_district = QLabel(self.gb_enderecos)
-        self.lb_img_district.setObjectName(u"lb_img_district")
-        self.lb_img_district.setMaximumSize(QSize(24, 24))
-        self.lb_img_district.setPixmap(QPixmap(u"../../assets/img/sign-1.png"))
-        self.lb_img_district.setScaledContents(True)
-
-        self.horizontalLayout_25.addWidget(self.lb_img_district)
-
-        self.le_bairro = QLineEdit(self.gb_enderecos)
-        self.le_bairro.setObjectName(u"le_bairro")
-
-        self.horizontalLayout_25.addWidget(self.le_bairro)
-
-
-        self.verticalLayout_17.addLayout(self.horizontalLayout_25)
-
-
-        self.horizontalLayout_24.addLayout(self.verticalLayout_17)
-
-
-        self.gridLayout_5.addLayout(self.horizontalLayout_24, 0, 4, 1, 1)
-
         self.horizontalLayout_22 = QHBoxLayout()
         self.horizontalLayout_22.setObjectName(u"horizontalLayout_22")
         self.lb_separator_8 = QLabel(self.gb_enderecos)
@@ -222,10 +105,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_16 = QVBoxLayout()
         self.verticalLayout_16.setObjectName(u"verticalLayout_16")
-        self.label_21 = QLabel(self.gb_enderecos)
-        self.label_21.setObjectName(u"label_21")
+        self.lb_title_uf = QLabel(self.gb_enderecos)
+        self.lb_title_uf.setObjectName(u"lb_title_uf")
 
-        self.verticalLayout_16.addWidget(self.label_21)
+        self.verticalLayout_16.addWidget(self.lb_title_uf)
 
         self.horizontalLayout_23 = QHBoxLayout()
         self.horizontalLayout_23.setObjectName(u"horizontalLayout_23")
@@ -256,6 +139,39 @@ class Ui_MainWindow(object):
 
         self.gridLayout_5.addLayout(self.horizontalLayout_22, 1, 2, 1, 1)
 
+        self.horizontalLayout_20 = QHBoxLayout()
+        self.horizontalLayout_20.setObjectName(u"horizontalLayout_20")
+        self.verticalLayout_15 = QVBoxLayout()
+        self.verticalLayout_15.setObjectName(u"verticalLayout_15")
+        self.lb_title_city = QLabel(self.gb_enderecos)
+        self.lb_title_city.setObjectName(u"lb_title_city")
+
+        self.verticalLayout_15.addWidget(self.lb_title_city)
+
+        self.horizontalLayout_21 = QHBoxLayout()
+        self.horizontalLayout_21.setObjectName(u"horizontalLayout_21")
+        self.lb_img_city = QLabel(self.gb_enderecos)
+        self.lb_img_city.setObjectName(u"lb_img_city")
+        self.lb_img_city.setMaximumSize(QSize(24, 24))
+        self.lb_img_city.setPixmap(QPixmap(u"../../assets/img/map-location.png"))
+        self.lb_img_city.setScaledContents(True)
+
+        self.horizontalLayout_21.addWidget(self.lb_img_city)
+
+        self.le_cidade = QLineEdit(self.gb_enderecos)
+        self.le_cidade.setObjectName(u"le_cidade")
+
+        self.horizontalLayout_21.addWidget(self.le_cidade)
+
+
+        self.verticalLayout_15.addLayout(self.horizontalLayout_21)
+
+
+        self.horizontalLayout_20.addLayout(self.verticalLayout_15)
+
+
+        self.gridLayout_5.addLayout(self.horizontalLayout_20, 1, 1, 1, 1)
+
         self.horizontalLayout_29 = QHBoxLayout()
         self.horizontalLayout_29.setObjectName(u"horizontalLayout_29")
         self.lb_separator_9 = QLabel(self.gb_enderecos)
@@ -269,10 +185,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_19 = QVBoxLayout()
         self.verticalLayout_19.setObjectName(u"verticalLayout_19")
-        self.label_30 = QLabel(self.gb_enderecos)
-        self.label_30.setObjectName(u"label_30")
+        self.lb_title_number = QLabel(self.gb_enderecos)
+        self.lb_title_number.setObjectName(u"lb_title_number")
 
-        self.verticalLayout_19.addWidget(self.label_30)
+        self.verticalLayout_19.addWidget(self.lb_title_number)
 
         self.horizontalLayout_30 = QHBoxLayout()
         self.horizontalLayout_30.setObjectName(u"horizontalLayout_30")
@@ -297,6 +213,118 @@ class Ui_MainWindow(object):
 
 
         self.gridLayout_5.addLayout(self.horizontalLayout_29, 1, 4, 1, 1)
+
+        self.horizontalLayout_18 = QHBoxLayout()
+        self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
+        self.lb_separator_5 = QLabel(self.gb_enderecos)
+        self.lb_separator_5.setObjectName(u"lb_separator_5")
+        self.lb_separator_5.setMaximumSize(QSize(1, 200))
+        self.lb_separator_5.setStyleSheet(u"QLabel{\n"
+"	background-color: rgb(181, 181, 181);\n"
+"}")
+
+        self.horizontalLayout_18.addWidget(self.lb_separator_5)
+
+        self.verticalLayout_14 = QVBoxLayout()
+        self.verticalLayout_14.setObjectName(u"verticalLayout_14")
+        self.lb_title_address = QLabel(self.gb_enderecos)
+        self.lb_title_address.setObjectName(u"lb_title_address")
+
+        self.verticalLayout_14.addWidget(self.lb_title_address)
+
+        self.horizontalLayout_19 = QHBoxLayout()
+        self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
+        self.lb_img_address = QLabel(self.gb_enderecos)
+        self.lb_img_address.setObjectName(u"lb_img_address")
+        self.lb_img_address.setMaximumSize(QSize(24, 24))
+        self.lb_img_address.setPixmap(QPixmap(u"../../assets/img/sign.png"))
+        self.lb_img_address.setScaledContents(True)
+
+        self.horizontalLayout_19.addWidget(self.lb_img_address)
+
+        self.le_endereco = QLineEdit(self.gb_enderecos)
+        self.le_endereco.setObjectName(u"le_endereco")
+
+        self.horizontalLayout_19.addWidget(self.le_endereco)
+
+
+        self.verticalLayout_14.addLayout(self.horizontalLayout_19)
+
+
+        self.horizontalLayout_18.addLayout(self.verticalLayout_14)
+
+
+        self.gridLayout_5.addLayout(self.horizontalLayout_18, 0, 2, 1, 1)
+
+        self.horizontalLayout_24 = QHBoxLayout()
+        self.horizontalLayout_24.setObjectName(u"horizontalLayout_24")
+        self.lb_separator_6 = QLabel(self.gb_enderecos)
+        self.lb_separator_6.setObjectName(u"lb_separator_6")
+        self.lb_separator_6.setMaximumSize(QSize(1, 200))
+        self.lb_separator_6.setStyleSheet(u"QLabel{\n"
+"	background-color: rgb(181, 181, 181);\n"
+"}")
+
+        self.horizontalLayout_24.addWidget(self.lb_separator_6)
+
+        self.verticalLayout_17 = QVBoxLayout()
+        self.verticalLayout_17.setObjectName(u"verticalLayout_17")
+        self.lb_title_district = QLabel(self.gb_enderecos)
+        self.lb_title_district.setObjectName(u"lb_title_district")
+
+        self.verticalLayout_17.addWidget(self.lb_title_district)
+
+        self.horizontalLayout_25 = QHBoxLayout()
+        self.horizontalLayout_25.setObjectName(u"horizontalLayout_25")
+        self.lb_img_district = QLabel(self.gb_enderecos)
+        self.lb_img_district.setObjectName(u"lb_img_district")
+        self.lb_img_district.setMaximumSize(QSize(24, 24))
+        self.lb_img_district.setPixmap(QPixmap(u"../../assets/img/sign-1.png"))
+        self.lb_img_district.setScaledContents(True)
+
+        self.horizontalLayout_25.addWidget(self.lb_img_district)
+
+        self.le_bairro = QLineEdit(self.gb_enderecos)
+        self.le_bairro.setObjectName(u"le_bairro")
+
+        self.horizontalLayout_25.addWidget(self.le_bairro)
+
+
+        self.verticalLayout_17.addLayout(self.horizontalLayout_25)
+
+
+        self.horizontalLayout_24.addLayout(self.verticalLayout_17)
+
+
+        self.gridLayout_5.addLayout(self.horizontalLayout_24, 0, 4, 1, 1)
+
+        self.verticalLayout_18 = QVBoxLayout()
+        self.verticalLayout_18.setObjectName(u"verticalLayout_18")
+        self.lb_title_complement = QLabel(self.gb_enderecos)
+        self.lb_title_complement.setObjectName(u"lb_title_complement")
+
+        self.verticalLayout_18.addWidget(self.lb_title_complement)
+
+        self.horizontalLayout_27 = QHBoxLayout()
+        self.horizontalLayout_27.setObjectName(u"horizontalLayout_27")
+        self.lb_img_complement = QLabel(self.gb_enderecos)
+        self.lb_img_complement.setObjectName(u"lb_img_complement")
+        self.lb_img_complement.setMaximumSize(QSize(24, 24))
+        self.lb_img_complement.setPixmap(QPixmap(u"../../assets/img/map-location.png"))
+        self.lb_img_complement.setScaledContents(True)
+
+        self.horizontalLayout_27.addWidget(self.lb_img_complement)
+
+        self.le_cidade_2 = QLineEdit(self.gb_enderecos)
+        self.le_cidade_2.setObjectName(u"le_cidade_2")
+
+        self.horizontalLayout_27.addWidget(self.le_cidade_2)
+
+
+        self.verticalLayout_18.addLayout(self.horizontalLayout_27)
+
+
+        self.gridLayout_5.addLayout(self.verticalLayout_18, 2, 1, 1, 1)
 
 
         self.gridLayout.addWidget(self.gb_enderecos, 3, 0, 1, 1)
@@ -362,10 +390,10 @@ class Ui_MainWindow(object):
         self.gridLayout_3.setObjectName(u"gridLayout_3")
         self.verticalLayout_2 = QVBoxLayout()
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.label = QLabel(self.gp_dados_pessoais)
-        self.label.setObjectName(u"label")
+        self.lb_title_full_name = QLabel(self.gp_dados_pessoais)
+        self.lb_title_full_name.setObjectName(u"lb_title_full_name")
 
-        self.verticalLayout_2.addWidget(self.label)
+        self.verticalLayout_2.addWidget(self.lb_title_full_name)
 
         self.horizontalLayout_3 = QHBoxLayout()
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
@@ -401,10 +429,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_12 = QVBoxLayout()
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
-        self.label_13 = QLabel(self.gp_dados_pessoais)
-        self.label_13.setObjectName(u"label_13")
+        self.lb_title_job = QLabel(self.gp_dados_pessoais)
+        self.lb_title_job.setObjectName(u"lb_title_job")
 
-        self.verticalLayout_12.addWidget(self.label_13)
+        self.verticalLayout_12.addWidget(self.lb_title_job)
 
         self.horizontalLayout_15 = QHBoxLayout()
         self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
@@ -432,10 +460,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_10 = QVBoxLayout()
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
-        self.label_10 = QLabel(self.gp_dados_pessoais)
-        self.label_10.setObjectName(u"label_10")
+        self.lb_title_date_birth = QLabel(self.gp_dados_pessoais)
+        self.lb_title_date_birth.setObjectName(u"lb_title_date_birth")
 
-        self.verticalLayout_10.addWidget(self.label_10)
+        self.verticalLayout_10.addWidget(self.lb_title_date_birth)
 
         self.horizontalLayout_9 = QHBoxLayout()
         self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
@@ -471,13 +499,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_4 = QVBoxLayout()
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
-        self.label_6 = QLabel(self.gp_dados_pessoais)
-        self.label_6.setObjectName(u"label_6")
-        font = QFont()
-        font.setPointSize(12)
-        self.label_6.setFont(font)
+        self.lb_title_rg_ie = QLabel(self.gp_dados_pessoais)
+        self.lb_title_rg_ie.setObjectName(u"lb_title_rg_ie")
 
-        self.verticalLayout_4.addWidget(self.label_6)
+        self.verticalLayout_4.addWidget(self.lb_title_rg_ie)
 
         self.horizontalLayout_6 = QHBoxLayout()
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
@@ -516,10 +541,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_9 = QVBoxLayout()
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
-        self.label_8 = QLabel(self.gp_dados_pessoais)
-        self.label_8.setObjectName(u"label_8")
+        self.lb_title_email = QLabel(self.gp_dados_pessoais)
+        self.lb_title_email.setObjectName(u"lb_title_email")
 
-        self.verticalLayout_9.addWidget(self.label_8)
+        self.verticalLayout_9.addWidget(self.lb_title_email)
 
         self.horizontalLayout_8 = QHBoxLayout()
         self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
@@ -547,10 +572,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_6 = QVBoxLayout()
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
-        self.label_23 = QLabel(self.gp_dados_pessoais)
-        self.label_23.setObjectName(u"label_23")
+        self.lb_title_type_person = QLabel(self.gp_dados_pessoais)
+        self.lb_title_type_person.setObjectName(u"lb_title_type_person")
 
-        self.verticalLayout_6.addWidget(self.label_23)
+        self.verticalLayout_6.addWidget(self.lb_title_type_person)
 
         self.horizontalLayout_4 = QHBoxLayout()
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
@@ -591,10 +616,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_11 = QVBoxLayout()
         self.verticalLayout_11.setObjectName(u"verticalLayout_11")
-        self.label_12 = QLabel(self.gp_dados_pessoais)
-        self.label_12.setObjectName(u"label_12")
+        self.lb_title_phone = QLabel(self.gp_dados_pessoais)
+        self.lb_title_phone.setObjectName(u"lb_title_phone")
 
-        self.verticalLayout_11.addWidget(self.label_12)
+        self.verticalLayout_11.addWidget(self.lb_title_phone)
 
         self.horizontalLayout_10 = QHBoxLayout()
         self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
@@ -624,10 +649,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
         self.verticalLayout_3 = QVBoxLayout()
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.label_4 = QLabel(self.gp_dados_pessoais)
-        self.label_4.setObjectName(u"label_4")
+        self.lb_title_cpf_cnpj = QLabel(self.gp_dados_pessoais)
+        self.lb_title_cpf_cnpj.setObjectName(u"lb_title_cpf_cnpj")
 
-        self.verticalLayout_3.addWidget(self.label_4)
+        self.verticalLayout_3.addWidget(self.lb_title_cpf_cnpj)
 
         self.horizontalLayout_5 = QHBoxLayout()
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
@@ -859,9 +884,9 @@ class Ui_MainWindow(object):
 
         self.lb_titulo_app = QLabel(self.frame_2)
         self.lb_titulo_app.setObjectName(u"lb_titulo_app")
-        font1 = QFont()
-        font1.setPointSize(30)
-        self.lb_titulo_app.setFont(font1)
+        font = QFont()
+        font.setPointSize(30)
+        self.lb_titulo_app.setFont(font)
 
         self.horizontalLayout_33.addWidget(self.lb_titulo_app)
 
@@ -887,16 +912,17 @@ class Ui_MainWindow(object):
         QWidget.setTabOrder(self.le_bairro, self.le_cidade)
         QWidget.setTabOrder(self.le_cidade, self.cb_estado)
         QWidget.setTabOrder(self.cb_estado, self.le_numero_casa)
-        QWidget.setTabOrder(self.le_numero_casa, self.btn_save)
+        QWidget.setTabOrder(self.le_numero_casa, self.le_cidade_2)
+        QWidget.setTabOrder(self.le_cidade_2, self.btn_save)
         QWidget.setTabOrder(self.btn_save, self.btn_clean_fields)
         QWidget.setTabOrder(self.btn_clean_fields, self.le_pesquisa_nome)
         QWidget.setTabOrder(self.le_pesquisa_nome, self.le_pesquisa_rg_cpf)
         QWidget.setTabOrder(self.le_pesquisa_rg_cpf, self.btn_remove_registration)
         QWidget.setTabOrder(self.btn_remove_registration, self.btn_update_table)
-        QWidget.setTabOrder(self.btn_update_table, self.lineEdit_11)
-        QWidget.setTabOrder(self.lineEdit_11, self.lineEdit)
-        QWidget.setTabOrder(self.lineEdit, self.tw_tabela_registros)
-        QWidget.setTabOrder(self.tw_tabela_registros, self.lineEdit_17)
+        QWidget.setTabOrder(self.btn_update_table, self.tw_tabela_registros)
+        QWidget.setTabOrder(self.tw_tabela_registros, self.lineEdit)
+        QWidget.setTabOrder(self.lineEdit, self.lineEdit_17)
+        QWidget.setTabOrder(self.lineEdit_17, self.lineEdit_11)
 
         self.retranslateUi(MainWindow)
 
@@ -912,41 +938,46 @@ class Ui_MainWindow(object):
         self.lb_date_time_local.setText(QCoreApplication.translate("MainWindow", u"...", None))
         self.groupBox.setTitle("")
         self.gb_enderecos.setTitle(QCoreApplication.translate("MainWindow", u"Endere\u00e7o", None))
-        self.label_15.setText(QCoreApplication.translate("MainWindow", u"CEP:", None))
+        self.lb_title_cep.setText(QCoreApplication.translate("MainWindow", u"CEP:", None))
         self.lb_img_cep.setText("")
 #if QT_CONFIG(tooltip)
         self.le_cep.setToolTip(QCoreApplication.translate("MainWindow", u"C\u00f3digo de Endere\u00e7amento Postal (CEP)", None))
 #endif // QT_CONFIG(tooltip)
-        self.lb_separator_5.setText("")
-        self.label_17.setText(QCoreApplication.translate("MainWindow", u"Endere\u00e7o:", None))
-        self.lb_img_address.setText("")
-#if QT_CONFIG(tooltip)
-        self.le_endereco.setToolTip(QCoreApplication.translate("MainWindow", u"Endere\u00e7o Rua", None))
-#endif // QT_CONFIG(tooltip)
-        self.label_19.setText(QCoreApplication.translate("MainWindow", u"Cidade:", None))
-        self.lb_img_city.setText("")
-#if QT_CONFIG(tooltip)
-        self.le_cidade.setToolTip(QCoreApplication.translate("MainWindow", u"Cidade", None))
-#endif // QT_CONFIG(tooltip)
-        self.lb_separator_6.setText("")
-        self.label_28.setText(QCoreApplication.translate("MainWindow", u"Bairro", None))
-        self.lb_img_district.setText("")
-#if QT_CONFIG(tooltip)
-        self.le_bairro.setToolTip(QCoreApplication.translate("MainWindow", u"N\u00famero residencial", None))
-#endif // QT_CONFIG(tooltip)
         self.lb_separator_8.setText("")
-        self.label_21.setText(QCoreApplication.translate("MainWindow", u"Estado:", None))
+        self.lb_title_uf.setText(QCoreApplication.translate("MainWindow", u"Estado:", None))
         self.lb_img_uf.setText("")
         self.cb_estado.setItemText(0, QCoreApplication.translate("MainWindow", u"--- Selecione ---", None))
 
 #if QT_CONFIG(tooltip)
         self.cb_estado.setToolTip(QCoreApplication.translate("MainWindow", u"Selecione um Estado", None))
 #endif // QT_CONFIG(tooltip)
+        self.lb_title_city.setText(QCoreApplication.translate("MainWindow", u"Cidade:", None))
+        self.lb_img_city.setText("")
+#if QT_CONFIG(tooltip)
+        self.le_cidade.setToolTip(QCoreApplication.translate("MainWindow", u"Cidade", None))
+#endif // QT_CONFIG(tooltip)
         self.lb_separator_9.setText("")
-        self.label_30.setText(QCoreApplication.translate("MainWindow", u"N\u00famero", None))
+        self.lb_title_number.setText(QCoreApplication.translate("MainWindow", u"N\u00famero", None))
         self.lb_img_number.setText("")
 #if QT_CONFIG(tooltip)
         self.le_numero_casa.setToolTip(QCoreApplication.translate("MainWindow", u"N\u00famero residencial", None))
+#endif // QT_CONFIG(tooltip)
+        self.lb_separator_5.setText("")
+        self.lb_title_address.setText(QCoreApplication.translate("MainWindow", u"Endere\u00e7o:", None))
+        self.lb_img_address.setText("")
+#if QT_CONFIG(tooltip)
+        self.le_endereco.setToolTip(QCoreApplication.translate("MainWindow", u"Endere\u00e7o Rua", None))
+#endif // QT_CONFIG(tooltip)
+        self.lb_separator_6.setText("")
+        self.lb_title_district.setText(QCoreApplication.translate("MainWindow", u"Bairro", None))
+        self.lb_img_district.setText("")
+#if QT_CONFIG(tooltip)
+        self.le_bairro.setToolTip(QCoreApplication.translate("MainWindow", u"N\u00famero residencial", None))
+#endif // QT_CONFIG(tooltip)
+        self.lb_title_complement.setText(QCoreApplication.translate("MainWindow", u"Complemento", None))
+        self.lb_img_complement.setText("")
+#if QT_CONFIG(tooltip)
+        self.le_cidade_2.setToolTip(QCoreApplication.translate("MainWindow", u"Complemento Ex. casa, escrit\u00f3rio ...", None))
 #endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(tooltip)
         self.btn_save.setToolTip(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Salvar registro</p></body></html>", None))
@@ -957,45 +988,48 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(tooltip)
         self.btn_clean_fields.setText(QCoreApplication.translate("MainWindow", u"Limpar campos", None))
         self.gp_dados_pessoais.setTitle(QCoreApplication.translate("MainWindow", u"Dados Pessoais", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"Nome Completo:", None))
+        self.lb_title_full_name.setText(QCoreApplication.translate("MainWindow", u"Nome Completo:", None))
         self.lb_img_name.setText("")
 #if QT_CONFIG(tooltip)
         self.le_nome_completo.setToolTip(QCoreApplication.translate("MainWindow", u"Nome completo", None))
 #endif // QT_CONFIG(tooltip)
         self.lb_separator.setText("")
-        self.label_13.setText(QCoreApplication.translate("MainWindow", u"Profiss\u00e3o:", None))
+        self.lb_title_job.setText(QCoreApplication.translate("MainWindow", u"Profiss\u00e3o:", None))
         self.lb_img_job.setText("")
 #if QT_CONFIG(tooltip)
         self.le_profissao.setToolTip(QCoreApplication.translate("MainWindow", u"Profiss\u00e3o", None))
 #endif // QT_CONFIG(tooltip)
-        self.label_10.setText(QCoreApplication.translate("MainWindow", u"Data de nascimento:", None))
+        self.lb_title_date_birth.setText(QCoreApplication.translate("MainWindow", u"Data de nascimento:", None))
         self.lb_img_date.setText("")
 #if QT_CONFIG(tooltip)
         self.de_data_nascimento.setToolTip(QCoreApplication.translate("MainWindow", u"Data de nascimento", None))
 #endif // QT_CONFIG(tooltip)
         self.lb_separator_2.setText("")
-        self.label_6.setText(QCoreApplication.translate("MainWindow", u"RG:", None))
+#if QT_CONFIG(tooltip)
+        self.lb_title_rg_ie.setToolTip(QCoreApplication.translate("MainWindow", u"Registro geral ou Inscri\u00e7\u00e3o estadual", None))
+#endif // QT_CONFIG(tooltip)
+        self.lb_title_rg_ie.setText(QCoreApplication.translate("MainWindow", u"RG:", None))
         self.lb_img_rg.setText("")
 #if QT_CONFIG(tooltip)
-        self.le_rg.setToolTip(QCoreApplication.translate("MainWindow", u"Registro Geral (RG)", None))
+        self.le_rg.setToolTip(QCoreApplication.translate("MainWindow", u"Registro Geral (RG) ou Inscri\u00e7\u00e3o Estadual (IE)", None))
 #endif // QT_CONFIG(tooltip)
         self.lb_separator_3.setText("")
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"E-Mail:", None))
+        self.lb_title_email.setText(QCoreApplication.translate("MainWindow", u"E-Mail:", None))
         self.lb_img_email.setText("")
 #if QT_CONFIG(tooltip)
         self.le_email.setToolTip(QCoreApplication.translate("MainWindow", u"Endere\u00e7o de E-Mail", None))
 #endif // QT_CONFIG(tooltip)
-        self.label_23.setText(QCoreApplication.translate("MainWindow", u"Tipo de Pessoa:", None))
+        self.lb_title_type_person.setText(QCoreApplication.translate("MainWindow", u"Tipo de Pessoa:", None))
         self.lb_img_type_person.setText("")
         self.cb_tipo_pessoa.setItemText(0, QCoreApplication.translate("MainWindow", u"--- Selecione ---", None))
 
         self.lb_separator_4.setText("")
-        self.label_12.setText(QCoreApplication.translate("MainWindow", u"Telefone/Celular:", None))
+        self.lb_title_phone.setText(QCoreApplication.translate("MainWindow", u"Telefone/Celular:", None))
         self.lb_img_phone.setText("")
 #if QT_CONFIG(tooltip)
         self.le_telefone.setToolTip(QCoreApplication.translate("MainWindow", u"Telefone fixo ou Celular", None))
 #endif // QT_CONFIG(tooltip)
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"CPF:", None))
+        self.lb_title_cpf_cnpj.setText(QCoreApplication.translate("MainWindow", u"CPF:", None))
         self.lb_img_cpf.setText("")
 #if QT_CONFIG(tooltip)
         self.le_cpf.setToolTip(QCoreApplication.translate("MainWindow", u"Cadastro de Pessoa F\u00edsica (CPF)", None))

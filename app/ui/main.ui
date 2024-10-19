@@ -80,7 +80,7 @@
                 <item>
                  <layout class="QVBoxLayout" name="verticalLayout_13">
                   <item>
-                   <widget class="QLabel" name="label_15">
+                   <widget class="QLabel" name="lb_title_cep">
                     <property name="text">
                      <string>CEP:</string>
                     </property>
@@ -120,177 +120,6 @@
                 </item>
                </layout>
               </item>
-              <item row="0" column="2">
-               <layout class="QHBoxLayout" name="horizontalLayout_18">
-                <item>
-                 <widget class="QLabel" name="lb_separator_5">
-                  <property name="maximumSize">
-                   <size>
-                    <width>1</width>
-                    <height>200</height>
-                   </size>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QLabel{
-	background-color: rgb(181, 181, 181);
-}</string>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <layout class="QVBoxLayout" name="verticalLayout_14">
-                  <item>
-                   <widget class="QLabel" name="label_17">
-                    <property name="text">
-                     <string>Endereço:</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_19">
-                    <item>
-                     <widget class="QLabel" name="lb_img_address">
-                      <property name="maximumSize">
-                       <size>
-                        <width>24</width>
-                        <height>24</height>
-                       </size>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="pixmap">
-                       <pixmap>../../assets/img/sign.png</pixmap>
-                      </property>
-                      <property name="scaledContents">
-                       <bool>true</bool>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLineEdit" name="le_endereco">
-                      <property name="toolTip">
-                       <string>Endereço Rua</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                 </layout>
-                </item>
-               </layout>
-              </item>
-              <item row="1" column="1">
-               <layout class="QHBoxLayout" name="horizontalLayout_20">
-                <item>
-                 <layout class="QVBoxLayout" name="verticalLayout_15">
-                  <item>
-                   <widget class="QLabel" name="label_19">
-                    <property name="text">
-                     <string>Cidade:</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_21">
-                    <item>
-                     <widget class="QLabel" name="lb_img_city">
-                      <property name="maximumSize">
-                       <size>
-                        <width>24</width>
-                        <height>24</height>
-                       </size>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="pixmap">
-                       <pixmap>../../assets/img/map-location.png</pixmap>
-                      </property>
-                      <property name="scaledContents">
-                       <bool>true</bool>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLineEdit" name="le_cidade">
-                      <property name="toolTip">
-                       <string>Cidade</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                 </layout>
-                </item>
-               </layout>
-              </item>
-              <item row="0" column="4">
-               <layout class="QHBoxLayout" name="horizontalLayout_24">
-                <item>
-                 <widget class="QLabel" name="lb_separator_6">
-                  <property name="maximumSize">
-                   <size>
-                    <width>1</width>
-                    <height>200</height>
-                   </size>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QLabel{
-	background-color: rgb(181, 181, 181);
-}</string>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <layout class="QVBoxLayout" name="verticalLayout_17">
-                  <item>
-                   <widget class="QLabel" name="label_28">
-                    <property name="text">
-                     <string>Bairro</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_25">
-                    <item>
-                     <widget class="QLabel" name="lb_img_district">
-                      <property name="maximumSize">
-                       <size>
-                        <width>24</width>
-                        <height>24</height>
-                       </size>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="pixmap">
-                       <pixmap>../../assets/img/sign-1.png</pixmap>
-                      </property>
-                      <property name="scaledContents">
-                       <bool>true</bool>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLineEdit" name="le_bairro">
-                      <property name="toolTip">
-                       <string>Número residencial</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                 </layout>
-                </item>
-               </layout>
-              </item>
               <item row="1" column="2">
                <layout class="QHBoxLayout" name="horizontalLayout_22">
                 <item>
@@ -314,7 +143,7 @@
                 <item>
                  <layout class="QVBoxLayout" name="verticalLayout_16">
                   <item>
-                   <widget class="QLabel" name="label_21">
+                   <widget class="QLabel" name="lb_title_uf">
                     <property name="text">
                      <string>Estado:</string>
                     </property>
@@ -375,6 +204,51 @@
                 </item>
                </layout>
               </item>
+              <item row="1" column="1">
+               <layout class="QHBoxLayout" name="horizontalLayout_20">
+                <item>
+                 <layout class="QVBoxLayout" name="verticalLayout_15">
+                  <item>
+                   <widget class="QLabel" name="lb_title_city">
+                    <property name="text">
+                     <string>Cidade:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_21">
+                    <item>
+                     <widget class="QLabel" name="lb_img_city">
+                      <property name="maximumSize">
+                       <size>
+                        <width>24</width>
+                        <height>24</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="pixmap">
+                       <pixmap>../../assets/img/map-location.png</pixmap>
+                      </property>
+                      <property name="scaledContents">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="le_cidade">
+                      <property name="toolTip">
+                       <string>Cidade</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
               <item row="1" column="4">
                <layout class="QHBoxLayout" name="horizontalLayout_29">
                 <item>
@@ -398,7 +272,7 @@
                 <item>
                  <layout class="QVBoxLayout" name="verticalLayout_19">
                   <item>
-                   <widget class="QLabel" name="label_30">
+                   <widget class="QLabel" name="lb_title_number">
                     <property name="text">
                      <string>Número</string>
                     </property>
@@ -433,6 +307,173 @@
                      </widget>
                     </item>
                    </layout>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+              <item row="0" column="2">
+               <layout class="QHBoxLayout" name="horizontalLayout_18">
+                <item>
+                 <widget class="QLabel" name="lb_separator_5">
+                  <property name="maximumSize">
+                   <size>
+                    <width>1</width>
+                    <height>200</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLabel{
+	background-color: rgb(181, 181, 181);
+}</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QVBoxLayout" name="verticalLayout_14">
+                  <item>
+                   <widget class="QLabel" name="lb_title_address">
+                    <property name="text">
+                     <string>Endereço:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_19">
+                    <item>
+                     <widget class="QLabel" name="lb_img_address">
+                      <property name="maximumSize">
+                       <size>
+                        <width>24</width>
+                        <height>24</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="pixmap">
+                       <pixmap>../../assets/img/sign.png</pixmap>
+                      </property>
+                      <property name="scaledContents">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="le_endereco">
+                      <property name="toolTip">
+                       <string>Endereço Rua</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+              <item row="0" column="4">
+               <layout class="QHBoxLayout" name="horizontalLayout_24">
+                <item>
+                 <widget class="QLabel" name="lb_separator_6">
+                  <property name="maximumSize">
+                   <size>
+                    <width>1</width>
+                    <height>200</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLabel{
+	background-color: rgb(181, 181, 181);
+}</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QVBoxLayout" name="verticalLayout_17">
+                  <item>
+                   <widget class="QLabel" name="lb_title_district">
+                    <property name="text">
+                     <string>Bairro</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_25">
+                    <item>
+                     <widget class="QLabel" name="lb_img_district">
+                      <property name="maximumSize">
+                       <size>
+                        <width>24</width>
+                        <height>24</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="pixmap">
+                       <pixmap>../../assets/img/sign-1.png</pixmap>
+                      </property>
+                      <property name="scaledContents">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="le_bairro">
+                      <property name="toolTip">
+                       <string>Número residencial</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+              <item row="2" column="1">
+               <layout class="QVBoxLayout" name="verticalLayout_18">
+                <item>
+                 <widget class="QLabel" name="lb_title_complement">
+                  <property name="text">
+                   <string>Complemento</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_27">
+                  <item>
+                   <widget class="QLabel" name="lb_img_complement">
+                    <property name="maximumSize">
+                     <size>
+                      <width>24</width>
+                      <height>24</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="pixmap">
+                     <pixmap>../../assets/img/map-location.png</pixmap>
+                    </property>
+                    <property name="scaledContents">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="le_cidade_2">
+                    <property name="toolTip">
+                     <string>Complemento Ex. casa, escritório ...</string>
+                    </property>
+                   </widget>
                   </item>
                  </layout>
                 </item>
@@ -571,7 +612,7 @@ QPushButton:hover{
               <item row="2" column="0" colspan="2">
                <layout class="QVBoxLayout" name="verticalLayout_2">
                 <item>
-                 <widget class="QLabel" name="label">
+                 <widget class="QLabel" name="lb_title_full_name">
                   <property name="text">
                    <string>Nome Completo:</string>
                   </property>
@@ -632,7 +673,7 @@ QPushButton:hover{
                 <item>
                  <layout class="QVBoxLayout" name="verticalLayout_12">
                   <item>
-                   <widget class="QLabel" name="label_13">
+                   <widget class="QLabel" name="lb_title_job">
                     <property name="text">
                      <string>Profissão:</string>
                     </property>
@@ -675,7 +716,7 @@ QPushButton:hover{
               <item row="8" column="0">
                <layout class="QVBoxLayout" name="verticalLayout_10">
                 <item>
-                 <widget class="QLabel" name="label_10">
+                 <widget class="QLabel" name="lb_title_date_birth">
                   <property name="text">
                    <string>Data de nascimento:</string>
                   </property>
@@ -736,11 +777,9 @@ QPushButton:hover{
                 <item>
                  <layout class="QVBoxLayout" name="verticalLayout_4">
                   <item>
-                   <widget class="QLabel" name="label_6">
-                    <property name="font">
-                     <font>
-                      <pointsize>12</pointsize>
-                     </font>
+                   <widget class="QLabel" name="lb_title_rg_ie">
+                    <property name="toolTip">
+                     <string>Registro geral ou Inscrição estadual</string>
                     </property>
                     <property name="text">
                      <string>RG:</string>
@@ -771,7 +810,7 @@ QPushButton:hover{
                     <item>
                      <widget class="QLineEdit" name="le_rg">
                       <property name="toolTip">
-                       <string>Registro Geral (RG)</string>
+                       <string>Registro Geral (RG) ou Inscrição Estadual (IE)</string>
                       </property>
                      </widget>
                     </item>
@@ -804,7 +843,7 @@ QPushButton:hover{
                 <item>
                  <layout class="QVBoxLayout" name="verticalLayout_9">
                   <item>
-                   <widget class="QLabel" name="label_8">
+                   <widget class="QLabel" name="lb_title_email">
                     <property name="text">
                      <string>E-Mail:</string>
                     </property>
@@ -847,7 +886,7 @@ QPushButton:hover{
               <item row="0" column="0">
                <layout class="QVBoxLayout" name="verticalLayout_6">
                 <item>
-                 <widget class="QLabel" name="label_23">
+                 <widget class="QLabel" name="lb_title_type_person">
                   <property name="text">
                    <string>Tipo de Pessoa:</string>
                   </property>
@@ -926,7 +965,7 @@ QPushButton:hover{
                 <item>
                  <layout class="QVBoxLayout" name="verticalLayout_11">
                   <item>
-                   <widget class="QLabel" name="label_12">
+                   <widget class="QLabel" name="lb_title_phone">
                     <property name="text">
                      <string>Telefone/Celular:</string>
                     </property>
@@ -971,7 +1010,7 @@ QPushButton:hover{
                 <item>
                  <layout class="QVBoxLayout" name="verticalLayout_3">
                   <item>
-                   <widget class="QLabel" name="label_4">
+                   <widget class="QLabel" name="lb_title_cpf_cnpj">
                     <property name="text">
                      <string>CPF:</string>
                     </property>
@@ -1428,17 +1467,18 @@ QPushButton:hover{
   <tabstop>le_cidade</tabstop>
   <tabstop>cb_estado</tabstop>
   <tabstop>le_numero_casa</tabstop>
+  <tabstop>le_cidade_2</tabstop>
   <tabstop>btn_save</tabstop>
   <tabstop>btn_clean_fields</tabstop>
   <tabstop>le_pesquisa_nome</tabstop>
   <tabstop>le_pesquisa_rg_cpf</tabstop>
   <tabstop>btn_remove_registration</tabstop>
   <tabstop>btn_update_table</tabstop>
-  <tabstop>lineEdit_11</tabstop>
-  <tabstop>lineEdit</tabstop>
   <tabstop>tw_tabela_registros</tabstop>
+  <tabstop>lineEdit</tabstop>
   <tabstop>lineEdit_17</tabstop>
-  <tabstop>le_endereco_2</tabstop>
+  <tabstop>le_numero_casa_2</tabstop>
+  <tabstop>lineEdit_11</tabstop>
  </tabstops>
  <resources/>
  <connections/>
