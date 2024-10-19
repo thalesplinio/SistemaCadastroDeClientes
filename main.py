@@ -60,7 +60,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 print("CEP não encontrado")
         except requests.exceptions.RequestException as e:
             print(f"Erro na requisição: {e}")
-    
         
     def worker_cep(self):
         t1 = threading.Thread(target=self.valida_cep)
@@ -96,6 +95,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.lb_img_date.setPixmap(QPixmap(ICON_DATE))
         self.lb_img_phone.setPixmap(QPixmap(ICON_PHONE))
         self.lb_img_cep.setPixmap(QPixmap(ICON_CEP))
+        self.lb_img_district.setPixmap(QPixmap(ICON_DISTRICT))
         self.lb_img_address.setPixmap(QPixmap(ICON_ADDRESS))
         self.lb_img_number.setPixmap(QPixmap(ICON_NUMBER))
         self.lb_img_uf.setPixmap(QPixmap(ICON_UF))

@@ -1,0 +1,16 @@
+app
+	- src
+		models		-> classes que representam os dados (cliente, endereco, etc...)
+		views 		-> classes que definem a interface gráfica
+		controllers	-> classes com lógica de negócio, interage com os modelos e as views
+		database	-> contém os scripts para interagir com o banco de dados
+	- resources
+		icons 		-> imagens utilizadas no projeto
+	- testes
+		- contém os testes unitários para garantir a qualidade do código
+main.py	-> ponto de partida
+
+MVC:
+	- model = representa os dados do seu sistema (Cliente)
+	- view  = responsável para interface gráfica, exibindo e permitindo edição dos dados
+	- controllet = intermedoário, recebendo as ações do usuário e atualizando o model e a view::
