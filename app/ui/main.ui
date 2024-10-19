@@ -99,9 +99,6 @@
                       <property name="text">
                        <string/>
                       </property>
-                      <property name="pixmap">
-                       <pixmap>../../assets/img/worldwide.png</pixmap>
-                      </property>
                       <property name="scaledContents">
                        <bool>true</bool>
                       </property>
@@ -161,9 +158,6 @@
                       </property>
                       <property name="text">
                        <string/>
-                      </property>
-                      <property name="pixmap">
-                       <pixmap>../../assets/img/map.png</pixmap>
                       </property>
                       <property name="scaledContents">
                        <bool>true</bool>
@@ -228,9 +222,6 @@
                       <property name="text">
                        <string/>
                       </property>
-                      <property name="pixmap">
-                       <pixmap>../../assets/img/map-location.png</pixmap>
-                      </property>
                       <property name="scaledContents">
                        <bool>true</bool>
                       </property>
@@ -274,7 +265,7 @@
                   <item>
                    <widget class="QLabel" name="lb_title_number">
                     <property name="text">
-                     <string>Número</string>
+                     <string>Número:</string>
                     </property>
                    </widget>
                   </item>
@@ -290,9 +281,6 @@
                       </property>
                       <property name="text">
                        <string/>
-                      </property>
-                      <property name="pixmap">
-                       <pixmap>../../assets/img/sign-1.png</pixmap>
                       </property>
                       <property name="scaledContents">
                        <bool>true</bool>
@@ -337,7 +325,7 @@
                   <item>
                    <widget class="QLabel" name="lb_title_address">
                     <property name="text">
-                     <string>Endereço:</string>
+                     <string>Rua:</string>
                     </property>
                    </widget>
                   </item>
@@ -353,9 +341,6 @@
                       </property>
                       <property name="text">
                        <string/>
-                      </property>
-                      <property name="pixmap">
-                       <pixmap>../../assets/img/sign.png</pixmap>
                       </property>
                       <property name="scaledContents">
                        <bool>true</bool>
@@ -417,9 +402,6 @@
                       <property name="text">
                        <string/>
                       </property>
-                      <property name="pixmap">
-                       <pixmap>../../assets/img/sign-1.png</pixmap>
-                      </property>
                       <property name="scaledContents">
                        <bool>true</bool>
                       </property>
@@ -460,16 +442,13 @@
                     <property name="text">
                      <string/>
                     </property>
-                    <property name="pixmap">
-                     <pixmap>../../assets/img/map-location.png</pixmap>
-                    </property>
                     <property name="scaledContents">
                      <bool>true</bool>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLineEdit" name="le_cidade_2">
+                   <widget class="QLineEdit" name="le_complemento">
                     <property name="toolTip">
                      <string>Complemento Ex. casa, escritório ...</string>
                     </property>
@@ -631,9 +610,6 @@ QPushButton:hover{
                     <property name="text">
                      <string/>
                     </property>
-                    <property name="pixmap">
-                     <pixmap>../../assets/img/user.png</pixmap>
-                    </property>
                     <property name="scaledContents">
                      <bool>true</bool>
                     </property>
@@ -692,9 +668,6 @@ QPushButton:hover{
                       <property name="text">
                        <string/>
                       </property>
-                      <property name="pixmap">
-                       <pixmap>../../assets/img/id-card.png</pixmap>
-                      </property>
                       <property name="scaledContents">
                        <bool>true</bool>
                       </property>
@@ -734,9 +707,6 @@ QPushButton:hover{
                     </property>
                     <property name="text">
                      <string/>
-                    </property>
-                    <property name="pixmap">
-                     <pixmap>../../assets/img/calendar.png</pixmap>
                     </property>
                     <property name="scaledContents">
                      <bool>true</bool>
@@ -799,9 +769,6 @@ QPushButton:hover{
                       <property name="text">
                        <string/>
                       </property>
-                      <property name="pixmap">
-                       <pixmap>../../assets/img/id-card-2.png</pixmap>
-                      </property>
                       <property name="scaledContents">
                        <bool>true</bool>
                       </property>
@@ -862,9 +829,6 @@ QPushButton:hover{
                       <property name="text">
                        <string/>
                       </property>
-                      <property name="pixmap">
-                       <pixmap>../../assets/img/paper-plane.png</pixmap>
-                      </property>
                       <property name="scaledContents">
                        <bool>true</bool>
                       </property>
@@ -904,9 +868,6 @@ QPushButton:hover{
                     </property>
                     <property name="text">
                      <string/>
-                    </property>
-                    <property name="pixmap">
-                     <pixmap>../../assets/img/briefcase.png</pixmap>
                     </property>
                     <property name="scaledContents">
                      <bool>true</bool>
@@ -984,9 +945,6 @@ QPushButton:hover{
                       <property name="text">
                        <string/>
                       </property>
-                      <property name="pixmap">
-                       <pixmap>../../assets/img/smartphone.png</pixmap>
-                      </property>
                       <property name="scaledContents">
                        <bool>true</bool>
                       </property>
@@ -1028,9 +986,6 @@ QPushButton:hover{
                       </property>
                       <property name="text">
                        <string/>
-                      </property>
-                      <property name="pixmap">
-                       <pixmap>../../assets/img/file.png</pixmap>
                       </property>
                       <property name="scaledContents">
                        <bool>true</bool>
@@ -1467,7 +1422,7 @@ QPushButton:hover{
   <tabstop>le_cidade</tabstop>
   <tabstop>cb_estado</tabstop>
   <tabstop>le_numero_casa</tabstop>
-  <tabstop>le_cidade_2</tabstop>
+  <tabstop>le_complemento</tabstop>
   <tabstop>btn_save</tabstop>
   <tabstop>btn_clean_fields</tabstop>
   <tabstop>le_pesquisa_nome</tabstop>

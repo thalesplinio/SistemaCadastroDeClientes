@@ -7,9 +7,17 @@ from PySide6.QtCore import QSize
 
 from app.ui.ui_main import Ui_MainWindow
 from app.utils.images_local import *
-from app.database.db_connecion import ConexaoBanco
+from app.database.db_connecion import BancoDeDados
+from app.models.Cliente import Cliente
+from app.models.Endereco import Endereco
+from app.models.ClientePessoaFisica import ClientePessoaFisica
+from app.models.ClientePessoaJuridica import ClientePessoaJuridica
 
 from app.utils.aditional_functions import (setup_connections_menu, populate_combobox,)
+
+import datetime
+atual_date = datetime.datetime.now()
+data_formatada = atual_date.strftime("%d-%m-%Y")
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
@@ -25,7 +33,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.set_images()
 
         # TESTANDO BANCO
-        self.data_base = ConexaoBanco()
+        self.data_base = BancoDeDados()
 
         self.cb_tipo_pessoa.currentIndexChanged.connect(self.select_type_person)
         self.btn_save.clicked.connect(self.insert_data)
@@ -51,9 +59,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if select_item == "Pessoa Física":
             self.lb_title_cpf_cnpj.setText("CPF:")
             self.lb_title_rg_ie.setText("RG:")
+            self.lb_title_date_birth.setText("Data de nascimento:")
+            print("Pessoa fisica")
+            
         elif select_item == "Pessoa Jurídica":
             self.lb_title_cpf_cnpj.setText("CNPJ:")
             self.lb_title_rg_ie.setText("IE:")
+            self.lb_title_date_birth.setText("Data de abertura:")
+            print("Pessoa juridica")
 
     def valida_cep(self):
         # Remove hífens e preenche com zeros à esquerda
@@ -66,6 +79,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             dict_content = response.json()
 
             if 'erro' not in dict_content:
+                self.lb_title_cep.setText("CPF: cep encontrado ✅*")
+                
                 self.le_endereco.setText(dict_content.get('logradouro', ''))
                 self.le_bairro.setText(dict_content.get('bairro', ''))
                 self.le_cidade.setText(dict_content.get('localidade', ''))
@@ -80,9 +95,49 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         t1.start()
 
     def insert_data(self):
-        self.nome_completo = self.le_nome_completo.text().upper().lower()
+        tipo_pessoa = self.cb_tipo_pessoa.currentText()
+        
+        def coletar_endereco():
+            return {
+                'cep': self.le_cep.text(),
+                'rua': self.le_endereco.text().upper().lower(),
+                'bairro': self.le_bairro.text().upper().lower(),
+                'cidade': self.le_cidade.text().upper().lower(),
+                'estado': self.cb_estado.currentText(),
+                'numero': self.le_numero_casa.text(),
+                'complemento': self.le_complemento.text().upper().lower()
+            }
+        endereco_dados = coletar_endereco()
+        endereco = Endereco(**endereco_dados)
 
-        print(self.nome_completo)
+        if tipo_pessoa == "Pessoa Física":
+            cliente = ClientePessoaFisica(
+                # tipo = tipo_pessoa,
+                nome_completo = self.le_nome_completo.text().upper().lower(),
+                profissao = self.le_profissao.text().upper().lower(),
+                cpf = self.le_cpf.text(),
+                rg = self.le_rg.text(),
+                email = self.le_email.text().upper().lower(),
+                data_nascimento = self.de_data_nascimento.text(),
+                telefone = self.le_telefone.text(),
+                data_cadastro = data_formatada,
+                **endereco_dados,
+            )
+            
+        elif tipo_pessoa == "Pessoa Jurídica":
+            cliente = ClientePessoaJuridica(
+                # tipo = tipo_pessoa,
+                nome_completo = self.le_nome_completo.text().upper().lower(),
+                profissao = self.le_profissao.text().upper().lower(),
+                cnpj = self.le_cpf.text(),
+                ie = self.le_rg.text(),
+                email = self.le_email.text().upper().lower(),
+                data_abertura = self.de_data_nascimento.text(),
+                telefone = self.le_telefone.text(),
+                data_cadastro = data_formatada,
+                **endereco_dados,
+            )
+        print(cliente)
 
     def set_images(self):
         # icon window

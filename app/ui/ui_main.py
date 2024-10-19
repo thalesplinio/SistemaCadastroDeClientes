@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainhrmKdf.ui'
+## Form generated from reading UI file 'mainsjTnYR.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.8.0
 ##
@@ -73,7 +73,6 @@ class Ui_MainWindow(object):
         self.lb_img_cep = QLabel(self.gb_enderecos)
         self.lb_img_cep.setObjectName(u"lb_img_cep")
         self.lb_img_cep.setMaximumSize(QSize(24, 24))
-        self.lb_img_cep.setPixmap(QPixmap(u"../../assets/img/worldwide.png"))
         self.lb_img_cep.setScaledContents(True)
 
         self.horizontalLayout_17.addWidget(self.lb_img_cep)
@@ -115,7 +114,6 @@ class Ui_MainWindow(object):
         self.lb_img_uf = QLabel(self.gb_enderecos)
         self.lb_img_uf.setObjectName(u"lb_img_uf")
         self.lb_img_uf.setMaximumSize(QSize(24, 24))
-        self.lb_img_uf.setPixmap(QPixmap(u"../../assets/img/map.png"))
         self.lb_img_uf.setScaledContents(True)
 
         self.horizontalLayout_23.addWidget(self.lb_img_uf)
@@ -153,7 +151,6 @@ class Ui_MainWindow(object):
         self.lb_img_city = QLabel(self.gb_enderecos)
         self.lb_img_city.setObjectName(u"lb_img_city")
         self.lb_img_city.setMaximumSize(QSize(24, 24))
-        self.lb_img_city.setPixmap(QPixmap(u"../../assets/img/map-location.png"))
         self.lb_img_city.setScaledContents(True)
 
         self.horizontalLayout_21.addWidget(self.lb_img_city)
@@ -195,7 +192,6 @@ class Ui_MainWindow(object):
         self.lb_img_number = QLabel(self.gb_enderecos)
         self.lb_img_number.setObjectName(u"lb_img_number")
         self.lb_img_number.setMaximumSize(QSize(24, 24))
-        self.lb_img_number.setPixmap(QPixmap(u"../../assets/img/sign-1.png"))
         self.lb_img_number.setScaledContents(True)
 
         self.horizontalLayout_30.addWidget(self.lb_img_number)
@@ -237,7 +233,6 @@ class Ui_MainWindow(object):
         self.lb_img_address = QLabel(self.gb_enderecos)
         self.lb_img_address.setObjectName(u"lb_img_address")
         self.lb_img_address.setMaximumSize(QSize(24, 24))
-        self.lb_img_address.setPixmap(QPixmap(u"../../assets/img/sign.png"))
         self.lb_img_address.setScaledContents(True)
 
         self.horizontalLayout_19.addWidget(self.lb_img_address)
@@ -279,7 +274,6 @@ class Ui_MainWindow(object):
         self.lb_img_district = QLabel(self.gb_enderecos)
         self.lb_img_district.setObjectName(u"lb_img_district")
         self.lb_img_district.setMaximumSize(QSize(24, 24))
-        self.lb_img_district.setPixmap(QPixmap(u"../../assets/img/sign-1.png"))
         self.lb_img_district.setScaledContents(True)
 
         self.horizontalLayout_25.addWidget(self.lb_img_district)
@@ -310,15 +304,14 @@ class Ui_MainWindow(object):
         self.lb_img_complement = QLabel(self.gb_enderecos)
         self.lb_img_complement.setObjectName(u"lb_img_complement")
         self.lb_img_complement.setMaximumSize(QSize(24, 24))
-        self.lb_img_complement.setPixmap(QPixmap(u"../../assets/img/map-location.png"))
         self.lb_img_complement.setScaledContents(True)
 
         self.horizontalLayout_27.addWidget(self.lb_img_complement)
 
-        self.le_cidade_2 = QLineEdit(self.gb_enderecos)
-        self.le_cidade_2.setObjectName(u"le_cidade_2")
+        self.le_complemento = QLineEdit(self.gb_enderecos)
+        self.le_complemento.setObjectName(u"le_complemento")
 
-        self.horizontalLayout_27.addWidget(self.le_cidade_2)
+        self.horizontalLayout_27.addWidget(self.le_complemento)
 
 
         self.verticalLayout_18.addLayout(self.horizontalLayout_27)
@@ -400,7 +393,6 @@ class Ui_MainWindow(object):
         self.lb_img_name = QLabel(self.gp_dados_pessoais)
         self.lb_img_name.setObjectName(u"lb_img_name")
         self.lb_img_name.setMaximumSize(QSize(24, 24))
-        self.lb_img_name.setPixmap(QPixmap(u"../../assets/img/user.png"))
         self.lb_img_name.setScaledContents(True)
 
         self.horizontalLayout_3.addWidget(self.lb_img_name)
@@ -439,7 +431,6 @@ class Ui_MainWindow(object):
         self.lb_img_job = QLabel(self.gp_dados_pessoais)
         self.lb_img_job.setObjectName(u"lb_img_job")
         self.lb_img_job.setMaximumSize(QSize(24, 24))
-        self.lb_img_job.setPixmap(QPixmap(u"../../assets/img/id-card.png"))
         self.lb_img_job.setScaledContents(True)
 
         self.horizontalLayout_15.addWidget(self.lb_img_job)
@@ -470,7 +461,6 @@ class Ui_MainWindow(object):
         self.lb_img_date = QLabel(self.gp_dados_pessoais)
         self.lb_img_date.setObjectName(u"lb_img_date")
         self.lb_img_date.setMaximumSize(QSize(24, 24))
-        self.lb_img_date.setPixmap(QPixmap(u"../../assets/img/calendar.png"))
         self.lb_img_date.setScaledContents(True)
 
         self.horizontalLayout_9.addWidget(self.lb_img_date)
@@ -509,7 +499,6 @@ class Ui_MainWindow(object):
         self.lb_img_rg = QLabel(self.gp_dados_pessoais)
         self.lb_img_rg.setObjectName(u"lb_img_rg")
         self.lb_img_rg.setMaximumSize(QSize(24, 24))
-        self.lb_img_rg.setPixmap(QPixmap(u"../../assets/img/id-card-2.png"))
         self.lb_img_rg.setScaledContents(True)
 
         self.horizontalLayout_6.addWidget(self.lb_img_rg)
@@ -551,7 +540,6 @@ class Ui_MainWindow(object):
         self.lb_img_email = QLabel(self.gp_dados_pessoais)
         self.lb_img_email.setObjectName(u"lb_img_email")
         self.lb_img_email.setMaximumSize(QSize(24, 24))
-        self.lb_img_email.setPixmap(QPixmap(u"../../assets/img/paper-plane.png"))
         self.lb_img_email.setScaledContents(True)
 
         self.horizontalLayout_8.addWidget(self.lb_img_email)
@@ -582,7 +570,6 @@ class Ui_MainWindow(object):
         self.lb_img_type_person = QLabel(self.gp_dados_pessoais)
         self.lb_img_type_person.setObjectName(u"lb_img_type_person")
         self.lb_img_type_person.setMaximumSize(QSize(24, 24))
-        self.lb_img_type_person.setPixmap(QPixmap(u"../../assets/img/briefcase.png"))
         self.lb_img_type_person.setScaledContents(True)
 
         self.horizontalLayout_4.addWidget(self.lb_img_type_person)
@@ -626,7 +613,6 @@ class Ui_MainWindow(object):
         self.lb_img_phone = QLabel(self.gp_dados_pessoais)
         self.lb_img_phone.setObjectName(u"lb_img_phone")
         self.lb_img_phone.setMaximumSize(QSize(24, 24))
-        self.lb_img_phone.setPixmap(QPixmap(u"../../assets/img/smartphone.png"))
         self.lb_img_phone.setScaledContents(True)
 
         self.horizontalLayout_10.addWidget(self.lb_img_phone)
@@ -659,7 +645,6 @@ class Ui_MainWindow(object):
         self.lb_img_cpf = QLabel(self.gp_dados_pessoais)
         self.lb_img_cpf.setObjectName(u"lb_img_cpf")
         self.lb_img_cpf.setMaximumSize(QSize(24, 24))
-        self.lb_img_cpf.setPixmap(QPixmap(u"../../assets/img/file.png"))
         self.lb_img_cpf.setScaledContents(True)
 
         self.horizontalLayout_5.addWidget(self.lb_img_cpf)
@@ -912,8 +897,8 @@ class Ui_MainWindow(object):
         QWidget.setTabOrder(self.le_bairro, self.le_cidade)
         QWidget.setTabOrder(self.le_cidade, self.cb_estado)
         QWidget.setTabOrder(self.cb_estado, self.le_numero_casa)
-        QWidget.setTabOrder(self.le_numero_casa, self.le_cidade_2)
-        QWidget.setTabOrder(self.le_cidade_2, self.btn_save)
+        QWidget.setTabOrder(self.le_numero_casa, self.le_complemento)
+        QWidget.setTabOrder(self.le_complemento, self.btn_save)
         QWidget.setTabOrder(self.btn_save, self.btn_clean_fields)
         QWidget.setTabOrder(self.btn_clean_fields, self.le_pesquisa_nome)
         QWidget.setTabOrder(self.le_pesquisa_nome, self.le_pesquisa_rg_cpf)
@@ -957,13 +942,13 @@ class Ui_MainWindow(object):
         self.le_cidade.setToolTip(QCoreApplication.translate("MainWindow", u"Cidade", None))
 #endif // QT_CONFIG(tooltip)
         self.lb_separator_9.setText("")
-        self.lb_title_number.setText(QCoreApplication.translate("MainWindow", u"N\u00famero", None))
+        self.lb_title_number.setText(QCoreApplication.translate("MainWindow", u"N\u00famero:", None))
         self.lb_img_number.setText("")
 #if QT_CONFIG(tooltip)
         self.le_numero_casa.setToolTip(QCoreApplication.translate("MainWindow", u"N\u00famero residencial", None))
 #endif // QT_CONFIG(tooltip)
         self.lb_separator_5.setText("")
-        self.lb_title_address.setText(QCoreApplication.translate("MainWindow", u"Endere\u00e7o:", None))
+        self.lb_title_address.setText(QCoreApplication.translate("MainWindow", u"Rua:", None))
         self.lb_img_address.setText("")
 #if QT_CONFIG(tooltip)
         self.le_endereco.setToolTip(QCoreApplication.translate("MainWindow", u"Endere\u00e7o Rua", None))
@@ -977,7 +962,7 @@ class Ui_MainWindow(object):
         self.lb_title_complement.setText(QCoreApplication.translate("MainWindow", u"Complemento", None))
         self.lb_img_complement.setText("")
 #if QT_CONFIG(tooltip)
-        self.le_cidade_2.setToolTip(QCoreApplication.translate("MainWindow", u"Complemento Ex. casa, escrit\u00f3rio ...", None))
+        self.le_complemento.setToolTip(QCoreApplication.translate("MainWindow", u"Complemento Ex. casa, escrit\u00f3rio ...", None))
 #endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(tooltip)
         self.btn_save.setToolTip(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Salvar registro</p></body></html>", None))
