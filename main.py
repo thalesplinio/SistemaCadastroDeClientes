@@ -8,7 +8,6 @@ from PySide6.QtCore import QSize
 from app.ui.ui_main import Ui_MainWindow
 from app.utils.images_local import *
 from app.database.db_connecion import BancoDeDados
-from app.models.Cliente import Cliente
 from app.models.Endereco import Endereco
 from app.models.ClientePessoaFisica import ClientePessoaFisica
 from app.models.ClientePessoaJuridica import ClientePessoaJuridica
@@ -109,33 +108,32 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             }
         endereco_dados = coletar_endereco()
         endereco = Endereco(**endereco_dados)
+        print(endereco_dados)
 
         if tipo_pessoa == "Pessoa Física":
             cliente = ClientePessoaFisica(
-                # tipo = tipo_pessoa,
+                tipo = tipo_pessoa,
                 nome_completo = self.le_nome_completo.text().upper().lower(),
                 profissao = self.le_profissao.text().upper().lower(),
+                telefone = self.le_telefone.text(),
+                email = self.le_email.text().upper().lower(),
+                data_cadastro = data_formatada,
                 cpf = self.le_cpf.text(),
                 rg = self.le_rg.text(),
-                email = self.le_email.text().upper().lower(),
                 data_nascimento = self.de_data_nascimento.text(),
-                telefone = self.le_telefone.text(),
-                data_cadastro = data_formatada,
-                **endereco_dados,
             )
             
         elif tipo_pessoa == "Pessoa Jurídica":
             cliente = ClientePessoaJuridica(
-                # tipo = tipo_pessoa,
+                tipo = tipo_pessoa,
                 nome_completo = self.le_nome_completo.text().upper().lower(),
                 profissao = self.le_profissao.text().upper().lower(),
+                telefone = self.le_telefone.text(),
+                email = self.le_email.text().upper().lower(),
+                data_cadastro = data_formatada,
                 cnpj = self.le_cpf.text(),
                 ie = self.le_rg.text(),
-                email = self.le_email.text().upper().lower(),
                 data_abertura = self.de_data_nascimento.text(),
-                telefone = self.le_telefone.text(),
-                data_cadastro = data_formatada,
-                **endereco_dados,
             )
         print(cliente)
 

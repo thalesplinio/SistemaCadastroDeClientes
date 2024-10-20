@@ -69,7 +69,7 @@ class BancoDeDados():
             ");"
         )
         
-    def inserir_cliente(self, cliente, endereco=None):
+    def inserir_cliente(self, cliente):
         with self.cursor() as cursor:
             cursor.execute("""
                 INSERT INTO cliente (
@@ -85,7 +85,8 @@ class BancoDeDados():
             with self.cursor() as cursor:
                 cursor.execute("""
                     INSERT INTO cliente_fisico(
-                        id_cliente, cpf, rg, data_nascimento)
+                        tipo_pessoa, nome_completo, profissao, telefone, email, 
+                        cpf, rg, data_nascimento)
                     VALUES(?,?,?,?)""",
                     ( self.cursor.lastrowid, cliente.cpf, cliente.rg, cliente.data_nascimento))
         if isinstance(cliente, ClientePessoaJuridica):
