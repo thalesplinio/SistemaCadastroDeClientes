@@ -1,7 +1,8 @@
-from Cliente import Cliente
+# from Cliente import Cliente
+from app.models.Cliente import Cliente
 import json
 
-class ClienteJuridico(Cliente):
+class ClientePessoaJuridico(Cliente):
     def __init__(self, nome_completo, profissao, telefone, email, cnpj, ie, data_fundacao):
         super().__init__(nome_completo, profissao, telefone, email)
         self.cnpj = cnpj
@@ -27,7 +28,7 @@ class ClienteJuridico(Cliente):
 
 
 if __name__ == "__main__":
-    cliente_juridico = ClienteJuridico(
+    cliente_juridico = ClientePessoaJuridico(
         "Tech Code",
         "Technology",
         "(67) 3333 3333",

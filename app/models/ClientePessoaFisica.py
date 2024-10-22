@@ -1,7 +1,8 @@
-from Cliente import Cliente
+# from Cliente import Cliente
+from app.models.Cliente import Cliente
 import json
 
-class ClienteFisico(Cliente):
+class ClientePessoaFisica(Cliente):
     def __init__(self, nome_completo, profissao, telefone, email, cpf, rg, data_nascimento):
         super().__init__(nome_completo, profissao, telefone, email)
         self.cpf = cpf
@@ -27,7 +28,7 @@ class ClienteFisico(Cliente):
 
 
 if __name__ == "__main__":
-    cliente_fisico = ClienteFisico(
+    cliente_fisico = ClientePessoaFisica(
         "nome cliente1",
         "profissao 1",
         "67 99999 8888",

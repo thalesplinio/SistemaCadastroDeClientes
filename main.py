@@ -7,10 +7,10 @@ from PySide6.QtCore import QSize
 
 from app.ui.ui_main import Ui_MainWindow
 from app.utils.images_local import *
-from app.database.db_connecion import BancoDeDados
-from app.models.Endereco import Endereco
+from app.database.db_connection import BancoDeDados
+from app.models.EnderecoCliente import EnderecoCliente
 from app.models.ClientePessoaFisica import ClientePessoaFisica
-from app.models.ClientePessoaJuridica import ClientePessoaJuridica
+from app.models.ClientePessoaJuridica import ClientePessoaJuridico
 
 from app.utils.aditional_functions import (setup_connections_menu, populate_combobox,)
 
@@ -32,7 +32,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.set_images()
 
         # TESTANDO BANCO
-        self.data_base = BancoDeDados()
+        self.data_base = BancoDeDados("banco_cliente.sqlite3")
 
         self.cb_tipo_pessoa.currentIndexChanged.connect(self.select_type_person)
         self.btn_save.clicked.connect(self.insert_data)
