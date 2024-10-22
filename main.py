@@ -59,13 +59,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.lb_title_cpf_cnpj.setText("CPF:")
             self.lb_title_rg_ie.setText("RG:")
             self.lb_title_date_birth.setText("Data de nascimento:")
-            print("Pessoa fisica")
             
         elif select_item == "Pessoa Jurídica":
             self.lb_title_cpf_cnpj.setText("CNPJ:")
             self.lb_title_rg_ie.setText("IE:")
             self.lb_title_date_birth.setText("Data de abertura:")
-            print("Pessoa juridica")
 
     def valida_cep(self):
         # Remove hífens e preenche com zeros à esquerda
@@ -107,6 +105,28 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 'complemento': self.le_complemento.text().upper().lower()
             }
         endereco_dados = coletar_endereco()
+        print(endereco_dados)
+        
+        if tipo_pessoa == "Pessoa Física":
+            print("Pessoa física adicionada")
+        elif tipo_pessoa == "Pessoa Jurídica":
+            print("Pessoa jurídica adicionada")
+        
+    
+        
+        
+        """
+        def coletar_endereco():
+            return {
+                'cep': self.le_cep.text(),
+                'rua': self.le_endereco.text().upper().lower(),
+                'bairro': self.le_bairro.text().upper().lower(),
+                'cidade': self.le_cidade.text().upper().lower(),
+                'estado': self.cb_estado.currentText(),
+                'numero': self.le_numero_casa.text(),
+                'complemento': self.le_complemento.text().upper().lower()
+            }
+        endereco_dados = coletar_endereco()
         endereco = Endereco(**endereco_dados)
         print(endereco_dados)
 
@@ -136,6 +156,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 data_abertura = self.de_data_nascimento.text(),
             )
         print(cliente)
+        """
 
     def set_images(self):
         # icon window

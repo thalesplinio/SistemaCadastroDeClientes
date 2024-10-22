@@ -1,29 +1,22 @@
 class Cliente:
-    def __init__(
-        self, nome_completo, profissao, telefone, email, data_cadastro):
-        
-        # self.id = id
-        # self.tipo_pessoa = tipo_pessoa  # "fisica" ou "juridica"
+    def __init__(self, nome_completo, profissao, telefone, email):
         self.nome_completo = nome_completo
         self.profissao = profissao
         self.telefone = telefone
         self.email = email
-        self.data_cadastro = data_cadastro
         
     def __str__(self):
-        return f"""Nome: {self.nome_completo},
-            Profissão: {self.profissao},
-            Telefone: {self.telefone},
-            Email: {self.email},
-            Data de cadastro: {self.data_cadastro}
-        """
+        return f"Nome: {self.nome_completo},\n"\
+            f"Profissão: {self.profissao},\n"\
+            f"Telefone: {self.telefone},\n"\
+            f"Email: {self.email},\n"\
+
 
 if __name__ == "__main__":
     cliente1 = Cliente(
-        "thales",
-        "analista",
+        "nome cliente1",
+        "profissao 1",
         "67 99999 8888",
-        "thales@email.com",
-        "2024-10-19"
+        "cliente1@email.com",
     )
     print(cliente1)
