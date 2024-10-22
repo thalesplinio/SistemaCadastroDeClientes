@@ -23,10 +23,15 @@ class BancoDeDados:
         self.conn.commit()
         
     def cria_tipo_cliente_padrao(self):
-        self.cursor.execute('''
-            INSERT INTO tipo_pessoa (descricao) VALUES('Física'),('Jurídica')
-        ''')
-        self.conn.commit()
+        # Verificando se 'Pessoa Física' e 'Pessoa Jurídica' já existem no sistema
+        self.cursor.execute("SELECT COUNT(*) FROM tipo_pessoa WHERE descricao IN ('Pessoa Física', 'Pessoa Jurídica')")
+        count = self.cursor.fetchone()[0]
+        
+        if count == 0:
+            self.cursor.execute('''
+                INSERT INTO tipo_pessoa (descricao) VALUES('Pessoa Física'),('Pessoa Jurídica')
+            ''')
+            self.conn.commit()
         
     def criar_tabela_endereco_cliente(self):
         self.cursor.execute('''
@@ -93,11 +98,40 @@ class BancoDeDados:
         self.cursor.execute("INSERT INTO tipo_pessoa (descricao) VALUES (?)", (descricao,))
         self.conn.commit()
 
-    def inserir_endereco(self, cep, bairro, rua, cidade, estado, numero, complemento):
-        self.cursor.execute("INSERT INTO endereco_cliente (cep, bairro, rua, cidade, estado, numero, complemento) VALUES (?, ?, ?, ?, ?, ?, ?)",
-                            (cep, bairro, rua, cidade, estado, numero, complemento))
-        self.conn.commit()
-        return self.cursor.lastrowid  # Retorna o ID do último registro inserido
+    # def inserir_endereco(self, cep, bairro, rua, cidade, estado, numero, complemento):
+    #     self.cursor.execute("INSERT INTO endereco_cliente (cep, bairro, rua, cidade, estado, numero, complemento) VALUES (?, ?, ?, ?, ?, ?, ?)",
+    #                         (cep, bairro, rua, cidade, estado, numero, complemento))
+    #     self.conn.commit()
+    #     return self.cursor.lastrowid  # Retorna o ID do último registro inserido
+    
+    def inserir_endereco(self, dados_endereco):
+        """Insere um novo endereço no banco de dados.
+
+        Args:
+            dados_endereco (dict): Dicionário contendo os dados do endereço.
+                Ex: {'cep': '12345-678', 'bairro': 'Centro', ...}
+
+        Returns:
+            int: O ID do endereço inserido.
+        """
+        # Extrai os valores do dicionário
+        try:
+            cep = dados_endereco.get('cep')
+            rua = dados_endereco.get('rua')
+            bairro = dados_endereco.get('bairro')
+            cidade = dados_endereco.get('cidade')
+            estado = dados_endereco.get('estado')
+            numero = dados_endereco.get('numero')
+            complemento = dados_endereco.get('complemento')
+            
+            # Insere os dados no banco de dados
+            self.cursor.execute("INSERT INTO endereco_cliente (cep, rua, bairro, cidade, estado, numero, complemento) VALUES (?, ?, ?, ?, ?, ?, ?)",
+                                (cep, rua, bairro, cidade, estado, numero, complemento))
+            self.conn.commit()
+            return self.cursor.lastrowid    # Retorna o ID do último registro inserido
+        except sqlite3.Error as e:
+            print(f"Erro ao inserir o registro: {e}")
+            print(dados_endereco)
 
     def inserir_cliente(self, nome_completo, profissao, telefone, email, tipo_pessoa, endereco_id):
         self.cursor.execute("INSERT INTO cliente (nome_completo, profissao, telefone, email, tipo_pessoa, id_endereco) VALUES (?, ?, ?, ?, ?, ?)",

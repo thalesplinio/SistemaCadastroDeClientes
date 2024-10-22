@@ -52,6 +52,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.cb_estado.addItems
         )
         
+    def limpa_campos(self):
+        self.le_nome_completo.setText(""),
+        self.le_profissao.setText(""),
+        self.le_telefone.setText(""),
+        self.le_email.setText(""),
+        
+        self.lb_title_type_person.setText("")
+        self.lb_message_user.setText("")
+    
     def select_type_person(self, index):
         select_item = self.cb_tipo_pessoa.itemText(index)
         
@@ -59,12 +68,19 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.lb_title_cpf_cnpj.setText("CPF:")
             self.lb_title_rg_ie.setText("RG:")
             self.lb_title_date_birth.setText("Data de nascimento:")
+            # reset de cores do combobox - apos selecionar pessoa
+            self.lb_title_type_person.setStyleSheet("color: ;")
+            self.lb_message_user.setStyleSheet("color: green;")
+            self.lb_message_user.setText("Tipo de pessoa selecionado")
             
         elif select_item == "Pessoa Jurídica":
             self.lb_title_cpf_cnpj.setText("CNPJ:")
             self.lb_title_rg_ie.setText("IE:")
             self.lb_title_date_birth.setText("Data de abertura:")
-
+            # reset de cores do combobox - apos selecionar pessoa
+            self.lb_title_type_person.setStyleSheet("color: ;")
+            self.lb_message_user.setStyleSheet("color: green;")
+            self.lb_message_user.setText("Tipo de pessoa selecionado")
     def valida_cep(self):
         # Remove hífens e preenche com zeros à esquerda
         self.cep = self.le_cep.text().replace('-', '').zfill(8)
@@ -93,70 +109,59 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def insert_data(self):
         tipo_pessoa = self.cb_tipo_pessoa.currentText()
-        
-        def coletar_endereco():
-            return {
-                'cep': self.le_cep.text(),
-                'rua': self.le_endereco.text().upper().lower(),
-                'bairro': self.le_bairro.text().upper().lower(),
-                'cidade': self.le_cidade.text().upper().lower(),
-                'estado': self.cb_estado.currentText(),
-                'numero': self.le_numero_casa.text(),
-                'complemento': self.le_complemento.text().upper().lower()
-            }
-        endereco_dados = coletar_endereco()
-        print(endereco_dados)
-        
+
+        dados_endereco = {
+            'cep': self.le_cep.text(),
+            'rua': self.le_endereco.text().upper().lower(),
+            'bairro': self.le_bairro.text().upper().lower(),
+            'cidade': self.le_cidade.text().upper().lower(),
+            'estado': self.cb_estado.currentText(),
+            'numero': self.le_numero_casa.text(),
+            'complemento': self.le_complemento.text().upper().lower()
+        }
+        dados_pessoa_fisica = {
+            'nome_completo': self.le_nome_completo.text().upper().lower(),
+            'profissao': self.le_profissao.text().upper().lower(),
+            'telefone': self.le_telefone.text(),
+            'email': self.le_email.text().upper().lower(),
+            'cpf': self.le_cpf.text(),
+            'rg': self.le_rg.text(),
+            'data_nascimento': self.de_data_nascimento.text(),
+        }
+        dados_pessoa_juridica = {
+            'nome_completo': self.le_nome_completo.text().upper().lower(),
+            'profissao': self.le_profissao.text().upper().lower(),
+            'telefone': self.le_telefone.text(),
+            'email': self.le_email.text().upper().lower(),
+            'cnpj': self.le_cpf.text(),
+            'ie': self.le_rg.text(),
+            'data_fundacao': self.de_data_nascimento.text(),
+        }
         if tipo_pessoa == "Pessoa Física":
+            endereco_id_1 = self.data_base.inserir_endereco(dados_endereco)
+            print(endereco_id_1)
+            # Inserir um cliente físico
+            cliente_id_1 = self.data_base.inserir_cliente('João da Silva', 'Programador', '(11) 98765-4321', 'joao@email.com', 1, endereco_id_1)
+            # inserir cliente fisico
+            self.data_base.inserir_cliente_fisico(cliente_id_1, '12345678909', '123456789', '1980-01-01')
+            
             print("Pessoa física adicionada")
         elif tipo_pessoa == "Pessoa Jurídica":
-            print("Pessoa jurídica adicionada")
-        
-    
-        
-        
-        """
-        def coletar_endereco():
-            return {
-                'cep': self.le_cep.text(),
-                'rua': self.le_endereco.text().upper().lower(),
-                'bairro': self.le_bairro.text().upper().lower(),
-                'cidade': self.le_cidade.text().upper().lower(),
-                'estado': self.cb_estado.currentText(),
-                'numero': self.le_numero_casa.text(),
-                'complemento': self.le_complemento.text().upper().lower()
-            }
-        endereco_dados = coletar_endereco()
-        endereco = Endereco(**endereco_dados)
-        print(endereco_dados)
+            endereco_id_2 = self.data_base.inserir_endereco('12345-678', 'Centro', 'Avenida Brasil', 'São Paulo', 'SP', 123, 'Apartamento 101')
+            # Inserir um cliente físico - 1 para fisico,  2 para juridico
+            cliente_id_2 = self.data_base.inserir_cliente('Empresa XYZ', 'Analista de sistemas', '(11) 98765-4321', 'contato@empresa.com', 2, endereco_id_2)
+            # inserir cliente fisico
+            self.data_base.inserir_cliente_juridico(cliente_id_2, '12.345.678/0001-12', '123456789', '2010-01-01')
 
-        if tipo_pessoa == "Pessoa Física":
-            cliente = ClientePessoaFisica(
-                tipo = tipo_pessoa,
-                nome_completo = self.le_nome_completo.text().upper().lower(),
-                profissao = self.le_profissao.text().upper().lower(),
-                telefone = self.le_telefone.text(),
-                email = self.le_email.text().upper().lower(),
-                data_cadastro = data_formatada,
-                cpf = self.le_cpf.text(),
-                rg = self.le_rg.text(),
-                data_nascimento = self.de_data_nascimento.text(),
-            )
-            
-        elif tipo_pessoa == "Pessoa Jurídica":
-            cliente = ClientePessoaJuridica(
-                tipo = tipo_pessoa,
-                nome_completo = self.le_nome_completo.text().upper().lower(),
-                profissao = self.le_profissao.text().upper().lower(),
-                telefone = self.le_telefone.text(),
-                email = self.le_email.text().upper().lower(),
-                data_cadastro = data_formatada,
-                cnpj = self.le_cpf.text(),
-                ie = self.le_rg.text(),
-                data_abertura = self.de_data_nascimento.text(),
-            )
-        print(cliente)
-        """
+            print("Pessoa jurídica adicionada")
+        elif tipo_pessoa == "--- Selecione ---":
+            self.lb_title_type_person.setStyleSheet("color: red;")
+            self.lb_title_type_person.setText("Tipo de Pessoa: *")
+            self.lb_message_user.setStyleSheet("color: red;")
+            self.lb_message_user.setText("Selecione o tipo de pessoa!!!")
+    
+
+
 
     def set_images(self):
         # icon window

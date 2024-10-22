@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainsjTnYR.ui'
+## Form generated from reading UI file 'mainMpEVxi.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.8.0
 ##
@@ -322,6 +322,12 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.gb_enderecos, 3, 0, 1, 1)
 
+        self.lineEdit_11 = QLineEdit(self.page)
+        self.lineEdit_11.setObjectName(u"lineEdit_11")
+        self.lineEdit_11.setMaximumSize(QSize(16777215, 1))
+
+        self.gridLayout.addWidget(self.lineEdit_11, 5, 0, 1, 1)
+
         self.horizontalLayout_26 = QHBoxLayout()
         self.horizontalLayout_26.setObjectName(u"horizontalLayout_26")
         self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
@@ -371,11 +377,15 @@ class Ui_MainWindow(object):
         self.horizontalLayout_26.addItem(self.horizontalSpacer)
 
 
-        self.gridLayout.addLayout(self.horizontalLayout_26, 7, 0, 1, 1)
+        self.gridLayout.addLayout(self.horizontalLayout_26, 8, 0, 1, 1)
 
         self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
-        self.gridLayout.addItem(self.verticalSpacer, 6, 0, 1, 1)
+        self.gridLayout.addItem(self.verticalSpacer, 7, 0, 1, 1)
+
+        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.gridLayout.addItem(self.verticalSpacer_2, 4, 0, 1, 1)
 
         self.gp_dados_pessoais = QGroupBox(self.page)
         self.gp_dados_pessoais.setObjectName(u"gp_dados_pessoais")
@@ -666,15 +676,11 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.gp_dados_pessoais, 2, 0, 1, 1)
 
-        self.lineEdit_11 = QLineEdit(self.page)
-        self.lineEdit_11.setObjectName(u"lineEdit_11")
-        self.lineEdit_11.setMaximumSize(QSize(16777215, 1))
+        self.lb_message_user = QLabel(self.page)
+        self.lb_message_user.setObjectName(u"lb_message_user")
+        self.lb_message_user.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.gridLayout.addWidget(self.lineEdit_11, 5, 0, 1, 1)
-
-        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
-
-        self.gridLayout.addItem(self.verticalSpacer_2, 4, 0, 1, 1)
+        self.gridLayout.addWidget(self.lb_message_user, 6, 0, 1, 1)
 
         self.stackedWidget.addWidget(self.page)
         self.page_2 = QWidget()
@@ -1019,6 +1025,7 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(tooltip)
         self.le_cpf.setToolTip(QCoreApplication.translate("MainWindow", u"Cadastro de Pessoa F\u00edsica (CPF)", None))
 #endif // QT_CONFIG(tooltip)
+        self.lb_message_user.setText("")
         self.gb_registros.setTitle(QCoreApplication.translate("MainWindow", u"Registros", None))
         self.gb_pesquisa_nome.setTitle(QCoreApplication.translate("MainWindow", u"Pesquisa por nome", None))
 #if QT_CONFIG(tooltip)
