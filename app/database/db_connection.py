@@ -32,7 +32,7 @@ class BancoDeDados:
                 INSERT INTO tipo_pessoa (descricao) VALUES('Pessoa Física'),('Pessoa Jurídica')
             ''')
             self.conn.commit()
-        
+            
     def criar_tabela_endereco_cliente(self):
         self.cursor.execute('''
             CREATE TABLE IF NOT EXISTS endereco_cliente(
@@ -148,3 +148,8 @@ class BancoDeDados:
         self.cursor.execute("INSERT INTO cliente_juridico (id_cliente, cnpj, ie, data_fundacao) VALUES (?, ?, ?, ?)",
                             (cliente_id, cnpj, ie, data_fundacao))
         self.conn.commit()
+
+    def select_talela_tipo_pessoa(self):
+        self.cursor.execute("SELECT descricao FROM tipo_pessoa")
+        result = self.cursor.fetchall()
+        return [item[0] for item in result]

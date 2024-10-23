@@ -41,7 +41,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # -------------------------------------------------------------------
         populate_combobox(
             self,
-            ["Pessoa Física", "Pessoa Jurídica"],
+            self.data_base.select_talela_tipo_pessoa(),
             self.cb_tipo_pessoa.addItems
         )
         populate_combobox(
@@ -58,7 +58,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.le_telefone.setText(""),
         self.le_email.setText(""),
         
-        self.lb_title_type_person.setText("")
+        self.lb_title_type_person.setText("Tipo de Pessoa:")
         self.lb_message_user.setText("")
     
     def select_type_person(self, index):
@@ -81,6 +81,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.lb_title_type_person.setStyleSheet("color: ;")
             self.lb_message_user.setStyleSheet("color: green;")
             self.lb_message_user.setText("Tipo de pessoa selecionado")
+            
     def valida_cep(self):
         # Remove hífens e preenche com zeros à esquerda
         self.cep = self.le_cep.text().replace('-', '').zfill(8)
@@ -154,15 +155,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.data_base.inserir_cliente_juridico(cliente_id_2, '12.345.678/0001-12', '123456789', '2010-01-01')
 
             print("Pessoa jurídica adicionada")
-        elif tipo_pessoa == "--- Selecione ---":
+        else:
             self.lb_title_type_person.setStyleSheet("color: red;")
             self.lb_title_type_person.setText("Tipo de Pessoa: *")
             self.lb_message_user.setStyleSheet("color: red;")
             self.lb_message_user.setText("Selecione o tipo de pessoa!!!")
     
-
-
-
     def set_images(self):
         # icon window
         app_icon = QIcon()
