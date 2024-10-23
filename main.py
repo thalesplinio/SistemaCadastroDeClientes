@@ -32,7 +32,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.set_images()
 
         # TESTANDO BANCO
-        self.data_base = BancoDeDados("banco_cliente.sqlite3")
+        self.data_base = BancoDeDados()
 
         self.cb_tipo_pessoa.currentIndexChanged.connect(self.select_type_person)
         self.btn_save.clicked.connect(self.insert_data)

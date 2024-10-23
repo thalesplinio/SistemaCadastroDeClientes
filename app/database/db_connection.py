@@ -1,8 +1,9 @@
 import sqlite3
+from app.utils.config import BANCO_DE_DADOS
 
 class BancoDeDados:
-    def __init__(self, database_file):
-        self.conn = sqlite3.connect(database_file)
+    def __init__(self):
+        self.conn = sqlite3.connect(BANCO_DE_DADOS)
         self.cursor = self.conn.cursor()
 
         # Criar a tabela caso não exista

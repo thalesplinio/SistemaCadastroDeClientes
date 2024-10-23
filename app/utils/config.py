@@ -1,1 +1,1 @@
-BANCO_DE_DADOS = "clientes.sqlite3"
+BANCO_DE_DADOS = "banco_cliente.sqlite3"
