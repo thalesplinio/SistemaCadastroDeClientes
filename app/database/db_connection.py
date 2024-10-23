@@ -3,16 +3,19 @@ from app.utils.config import BANCO_DE_DADOS
 
 class BancoDeDados:
     def __init__(self):
-        self.conn = sqlite3.connect(BANCO_DE_DADOS)
-        self.cursor = self.conn.cursor()
+        try:
+            self.conn = sqlite3.connect(BANCO_DE_DADOS)
+            self.cursor = self.conn.cursor()
 
-        # Criar a tabela caso não exista
-        self.criar_tabela_tipo_cliente()
-        self.cria_tipo_cliente_padrao()
-        self.criar_tabela_endereco_cliente()
-        self.criar_tabela_cliente()
-        self.criar_tabela_cliente_fisico()
-        self.criar_tabela_cliente_juridico()
+            # Criar a tabela caso não exista
+            self.criar_tabela_tipo_cliente()
+            self.cria_tipo_cliente_padrao()
+            self.criar_tabela_endereco_cliente()
+            self.criar_tabela_cliente()
+            self.criar_tabela_cliente_fisico()
+            self.criar_tabela_cliente_juridico()
+        except sqlite3.Error as e:
+            print(f"[ERRO] - erro ao se conectar ao banco: {e}")
         
     def criar_tabela_tipo_cliente(self):
         self.cursor.execute('''

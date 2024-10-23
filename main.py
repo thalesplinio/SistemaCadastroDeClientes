@@ -12,16 +12,15 @@ from app.models.EnderecoCliente import EnderecoCliente
 from app.models.ClientePessoaFisica import ClientePessoaFisica
 from app.models.ClientePessoaJuridica import ClientePessoaJuridico
 
+from app.utils.config import DATA_FORMATADA
 from app.utils.aditional_functions import (setup_connections_menu, populate_combobox,)
 
-import datetime
-atual_date = datetime.datetime.now()
-data_formatada = atual_date.strftime("%d-%m-%Y")
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setupUi(self)
+        self.lb_date_time_local.setText(DATA_FORMATADA)
 
         setup_connections_menu(self,
             self.stackedWidget.setCurrentWidget,
@@ -70,8 +69,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.lb_title_date_birth.setText("Data de nascimento:")
             # reset de cores do combobox - apos selecionar pessoa
             self.lb_title_type_person.setStyleSheet("color: ;")
-            self.lb_message_user.setStyleSheet("color: green;")
-            self.lb_message_user.setText("Tipo de pessoa selecionado")
+            self.lb_message_user.setText("")
             
         elif select_item == "Pessoa Jurídica":
             self.lb_title_cpf_cnpj.setText("CNPJ:")
@@ -79,8 +77,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.lb_title_date_birth.setText("Data de abertura:")
             # reset de cores do combobox - apos selecionar pessoa
             self.lb_title_type_person.setStyleSheet("color: ;")
-            self.lb_message_user.setStyleSheet("color: green;")
-            self.lb_message_user.setText("Tipo de pessoa selecionado")
+            self.lb_message_user.setText("")
             
     def valida_cep(self):
         # Remove hífens e preenche com zeros à esquerda
@@ -138,9 +135,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             'ie': self.le_rg.text(),
             'data_fundacao': self.de_data_nascimento.text(),
         }
+        
         if tipo_pessoa == "Pessoa Física":
             endereco_id_1 = self.data_base.inserir_endereco(dados_endereco)
-            print(endereco_id_1)
             # Inserir um cliente físico
             cliente_id_1 = self.data_base.inserir_cliente('João da Silva', 'Programador', '(11) 98765-4321', 'joao@email.com', 1, endereco_id_1)
             # inserir cliente fisico

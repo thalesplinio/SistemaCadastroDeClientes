@@ -28,10 +28,8 @@ ICON_UF = IMAGES_DIR / "map.png"
 ICON_CITY = IMAGES_DIR / "map-location.png"
 
 
-
-
-
 if __name__ == "__main__":
-    print("root dir: --> ", ROOT_DIR)
-    print("files dir: --> ", IMAGES_DIR)
-    print("icon dir: --> ", ICON_NAME)
+    # print("root dir: --> ", ROOT_DIR)
+    # print("files dir: --> ", IMAGES_DIR)
+    # print("icon dir: --> ", ICON_NAME)
+    ...
