@@ -1,6 +1,7 @@
 import sqlite3
 from app.utils.config import BANCO_DE_DADOS
 
+
 class BancoDeDados:
     def __init__(self):
         try:
@@ -16,7 +17,7 @@ class BancoDeDados:
             self.criar_tabela_cliente_juridico()
         except sqlite3.Error as e:
             print(f"[ERRO] - erro ao se conectar ao banco: {e}")
-        
+
     def criar_tabela_tipo_cliente(self):
         self.cursor.execute('''
             CREATE TABLE IF NOT EXISTS tipo_pessoa(
@@ -25,18 +26,19 @@ class BancoDeDados:
             )
         ''')
         self.conn.commit()
-        
+
     def cria_tipo_cliente_padrao(self):
         # Verificando se 'Pessoa Física' e 'Pessoa Jurídica' já existem no sistema
-        self.cursor.execute("SELECT COUNT(*) FROM tipo_pessoa WHERE descricao IN ('Pessoa Física', 'Pessoa Jurídica')")
+        self.cursor.execute(
+            "SELECT COUNT(*) FROM tipo_pessoa WHERE descricao IN ('Pessoa Física', 'Pessoa Jurídica')")
         count = self.cursor.fetchone()[0]
-        
+
         if count == 0:
             self.cursor.execute('''
                 INSERT INTO tipo_pessoa (descricao) VALUES('Pessoa Física'),('Pessoa Jurídica')
             ''')
             self.conn.commit()
-            
+
     def criar_tabela_endereco_cliente(self):
         self.cursor.execute('''
             CREATE TABLE IF NOT EXISTS endereco_cliente(
@@ -52,7 +54,7 @@ class BancoDeDados:
         ''')
         self.conn.commit()
         self.conn.commit()
-        
+
     def criar_tabela_cliente(self):
         self.cursor.execute('''
             CREATE TABLE IF NOT EXISTS cliente(
@@ -69,7 +71,7 @@ class BancoDeDados:
             )
         ''')
         self.conn.commit()
-        
+
     def criar_tabela_cliente_fisico(self):
         self.cursor.execute('''
             CREATE TABLE IF NOT EXISTS cliente_fisico(
@@ -83,7 +85,7 @@ class BancoDeDados:
             )
         ''')
         self.conn.commit()
-        
+
     def criar_tabela_cliente_juridico(self):
         self.cursor.execute('''
             CREATE TABLE IF NOT EXISTS cliente_juridico(
@@ -99,7 +101,8 @@ class BancoDeDados:
         self.conn.commit()
 
     def inserir_tipo_pessoa(self, descricao):
-        self.cursor.execute("INSERT INTO tipo_pessoa (descricao) VALUES (?)", (descricao,))
+        self.cursor.execute(
+            "INSERT INTO tipo_pessoa (descricao) VALUES (?)", (descricao,))
         self.conn.commit()
 
     # def inserir_endereco(self, cep, bairro, rua, cidade, estado, numero, complemento):
@@ -107,7 +110,7 @@ class BancoDeDados:
     #                         (cep, bairro, rua, cidade, estado, numero, complemento))
     #     self.conn.commit()
     #     return self.cursor.lastrowid  # Retorna o ID do último registro inserido
-    
+
     def inserir_endereco(self, dados_endereco):
         """Insere um novo endereço no banco de dados.
 
@@ -127,7 +130,7 @@ class BancoDeDados:
             estado = dados_endereco.get('estado')
             numero = dados_endereco.get('numero')
             complemento = dados_endereco.get('complemento')
-            
+
             # Insere os dados no banco de dados
             self.cursor.execute("INSERT INTO endereco_cliente (cep, rua, bairro, cidade, estado, numero, complemento) VALUES (?, ?, ?, ?, ?, ?, ?)",
                                 (cep, rua, bairro, cidade, estado, numero, complemento))
@@ -137,16 +140,44 @@ class BancoDeDados:
             print(f"Erro ao inserir o registro: {e}")
             print(dados_endereco)
 
-    def inserir_cliente(self, nome_completo, profissao, telefone, email, tipo_pessoa, endereco_id):
-        self.cursor.execute("INSERT INTO cliente (nome_completo, profissao, telefone, email, tipo_pessoa, id_endereco) VALUES (?, ?, ?, ?, ?, ?)",
-                            (nome_completo, profissao, telefone, email, tipo_pessoa, endereco_id))
-        self.conn.commit()
-        return self.cursor.lastrowid
+    # def inserir_cliente(self, nome_completo, profissao, telefone, email, tipo_pessoa, endereco_id):
+    #     self.cursor.execute("INSERT INTO cliente(nome_completo, profissao, telefone, email, tipo_pessoa, id_endereco) VALUES (?, ?, ?, ?, ?, ?)",
+    #                         (nome_completo, profissao, telefone, email, tipo_pessoa, endereco_id))
+    #     self.conn.commit()
+    #     return self.cursor.lastrowid
+
+    def inserir_cliente(self, dados_pessoa_fisica, tipo_pessoa, endereco_id):
+        try:
+            nome_completo = dados_pessoa_fisica.get('nome_completo')
+            profissao = dados_pessoa_fisica.get('profissao')
+            telefone = dados_pessoa_fisica.get('telefone')
+            email = dados_pessoa_fisica.get('email')
+
+            self.cursor.execute("INSERT INTO cliente(nome_completo, profissao, telefone, email, tipo_pessoa, id_endereco) VALUES (?, ?, ?, ?, ?, ?)",
+                                (nome_completo, profissao, telefone, email, tipo_pessoa, endereco_id))
+            self.conn.commit()
+            return self.cursor.lastrowid
+        except sqlite3.Error as e:
+            print(f"Erro ao inserir o registro: {e}")
+            print(dados_pessoa_fisica)
 
     def inserir_cliente_fisico(self, cliente_id, cpf, rg, data_nascimento):
         self.cursor.execute("INSERT INTO cliente_fisico (id_cliente, cpf, rg, data_nascimento) VALUES (?, ?, ?, ?)",
                             (cliente_id, cpf, rg, data_nascimento))
         self.conn.commit()
+        
+    def inserir_cliente_fisico(self, cliente_id, dados_fisico):
+        try:
+            cpf = dados_fisico.get("cpf")
+            rg = dados_fisico.get("rg")
+            data_nascimento = dados_fisico.get("data_nascimento")
+
+            self.cursor.execute("INSERT INTO cliente_fisico (id_cliente, cpf, rg, data_nascimento) VALUES (?, ?, ?, ?)",
+                                (cliente_id, cpf, rg, data_nascimento))
+            self.conn.commit()
+        except sqlite3.Error as e:
+            print(f"Erro ao inserir o registro: {e}")
+            print(dados_fisico)
 
     def inserir_cliente_juridico(self, cliente_id, cnpj, ie, data_fundacao):
         self.cursor.execute("INSERT INTO cliente_juridico (id_cliente, cnpj, ie, data_fundacao) VALUES (?, ?, ?, ?)",

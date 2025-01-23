@@ -13,7 +13,8 @@ from app.models.ClientePessoaFisica import ClientePessoaFisica
 from app.models.ClientePessoaJuridica import ClientePessoaJuridico
 
 from app.utils.config import DATA_FORMATADA
-from app.utils.aditional_functions import (setup_connections_menu, populate_combobox,)
+from app.utils.aditional_functions import (
+    setup_connections_menu, populate_combobox,)
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -23,17 +24,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.lb_date_time_local.setText(DATA_FORMATADA)
 
         setup_connections_menu(self,
-            self.stackedWidget.setCurrentWidget,
-            self.stackedWidget.setCurrentWidget,
-            self.page,
-            self.page_2
-        )
+                               self.stackedWidget.setCurrentWidget,
+                               self.stackedWidget.setCurrentWidget,
+                               self.page,
+                               self.page_2
+                               )
         self.set_images()
 
         # TESTANDO BANCO
         self.data_base = BancoDeDados()
 
-        self.cb_tipo_pessoa.currentIndexChanged.connect(self.select_type_person)
+        self.cb_tipo_pessoa.currentIndexChanged.connect(
+            self.select_type_person)
         self.btn_save.clicked.connect(self.insert_data)
         # -------------------------------------------------------------------
         self.le_cep.textChanged.connect(self.worker_cep)
@@ -46,23 +48,23 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         populate_combobox(
             self,
             ["AC", "AL", "AP", "AM", "CE", "ES", "BA", "GO", "MA",
-            "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ",
-            "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO", "DF"],
+             "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ",
+             "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO", "DF"],
             self.cb_estado.addItems
         )
-        
+
     def limpa_campos(self):
         self.le_nome_completo.setText(""),
         self.le_profissao.setText(""),
         self.le_telefone.setText(""),
         self.le_email.setText(""),
-        
+
         self.lb_title_type_person.setText("Tipo de Pessoa:")
         self.lb_message_user.setText("")
-    
+
     def select_type_person(self, index):
         select_item = self.cb_tipo_pessoa.itemText(index)
-        
+
         if select_item == "Pessoa Física":
             self.lb_title_cpf_cnpj.setText("CPF:")
             self.lb_title_rg_ie.setText("RG:")
@@ -70,7 +72,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             # reset de cores do combobox - apos selecionar pessoa
             self.lb_title_type_person.setStyleSheet("color: ;")
             self.lb_message_user.setText("")
-            
+
         elif select_item == "Pessoa Jurídica":
             self.lb_title_cpf_cnpj.setText("CNPJ:")
             self.lb_title_rg_ie.setText("IE:")
@@ -78,7 +80,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             # reset de cores do combobox - apos selecionar pessoa
             self.lb_title_type_person.setStyleSheet("color: ;")
             self.lb_message_user.setText("")
-            
+
     def valida_cep(self):
         # Remove hífens e preenche com zeros à esquerda
         self.cep = self.le_cep.text().replace('-', '').zfill(8)
@@ -91,7 +93,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
             if 'erro' not in dict_content:
                 self.lb_title_cep.setText("CPF: cep encontrado ✅*")
-                
+
                 self.le_endereco.setText(dict_content.get('logradouro', ''))
                 self.le_bairro.setText(dict_content.get('bairro', ''))
                 self.le_cidade.setText(dict_content.get('localidade', ''))
@@ -122,6 +124,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             'profissao': self.le_profissao.text().upper().lower(),
             'telefone': self.le_telefone.text(),
             'email': self.le_email.text().upper().lower(),
+        }
+        dados_cpf_rg_nascimento = {
             'cpf': self.le_cpf.text(),
             'rg': self.le_rg.text(),
             'data_nascimento': self.de_data_nascimento.text(),
@@ -131,25 +135,32 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             'profissao': self.le_profissao.text().upper().lower(),
             'telefone': self.le_telefone.text(),
             'email': self.le_email.text().upper().lower(),
+        }
+        dados_cnpj_ie_data_fundacao = {
             'cnpj': self.le_cpf.text(),
             'ie': self.le_rg.text(),
             'data_fundacao': self.de_data_nascimento.text(),
         }
-        
-        if tipo_pessoa == "Pessoa Física":
+
+        if tipo_pessoa == "Pessoa Física":  # CLIENTE FISICO = 1
+            # Inserir endereco
             endereco_id_1 = self.data_base.inserir_endereco(dados_endereco)
-            # Inserir um cliente físico
-            cliente_id_1 = self.data_base.inserir_cliente('João da Silva', 'Programador', '(11) 98765-4321', 'joao@email.com', 1, endereco_id_1)
+
+            # Inserir cliente físico
+            cliente_id_1 = self.data_base.inserir_cliente(dados_pessoa_fisica, 1, endereco_id_1)
+
             # inserir cliente fisico
-            self.data_base.inserir_cliente_fisico(cliente_id_1, '12345678909', '123456789', '1980-01-01')
-            
-            print("Pessoa física adicionada")
-        elif tipo_pessoa == "Pessoa Jurídica":
-            endereco_id_2 = self.data_base.inserir_endereco('12345-678', 'Centro', 'Avenida Brasil', 'São Paulo', 'SP', 123, 'Apartamento 101')
+            self.data_base.inserir_cliente_fisico(cliente_id_1, dados_cpf_rg_nascimento)
+
+        elif tipo_pessoa == "Pessoa Jurídica":  # CLIENTE JURIDITO = 2
+            endereco_id_2 = self.data_base.inserir_endereco(
+                '12345-678', 'Centro', 'Avenida Brasil', 'São Paulo', 'SP', 123, 'Apartamento 101')
             # Inserir um cliente físico - 1 para fisico,  2 para juridico
-            cliente_id_2 = self.data_base.inserir_cliente('Empresa XYZ', 'Analista de sistemas', '(11) 98765-4321', 'contato@empresa.com', 2, endereco_id_2)
+            cliente_id_2 = self.data_base.inserir_cliente(
+                'Empresa XYZ', 'Analista de sistemas', '(11) 98765-4321', 'contato@empresa.com', 2, endereco_id_2)
             # inserir cliente fisico
-            self.data_base.inserir_cliente_juridico(cliente_id_2, '12.345.678/0001-12', '123456789', '2010-01-01')
+            self.data_base.inserir_cliente_juridico(
+                cliente_id_2, '12.345.678/0001-12', '123456789', '2010-01-01')
 
             print("Pessoa jurídica adicionada")
         else:
@@ -157,7 +168,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.lb_title_type_person.setText("Tipo de Pessoa: *")
             self.lb_message_user.setStyleSheet("color: red;")
             self.lb_message_user.setText("Selecione o tipo de pessoa!!!")
-    
+
     def set_images(self):
         # icon window
         app_icon = QIcon()
