@@ -1,3 +1,4 @@
+import os
 import datetime
 from datetime import datetime
 from locale import setlocale, LC_ALL
@@ -11,8 +12,9 @@ dt = datetime.now()
 DATA_FORMATADA = dt.strftime(FORMATE_DATE)
 
 # banco de dados
-BANCO_DE_DADOS = "banco_cliente.sqlite3"
-
+_pasta_banco = "data"
+os.makedirs(_pasta_banco, exist_ok=True)
+BANCO_DE_DADOS = os.path.join(_pasta_banco, "databanco_cliente.sqlite3")
 
 if __name__ == "__main__":
     print(DATA_FORMATADA)

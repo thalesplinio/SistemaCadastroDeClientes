@@ -161,10 +161,10 @@ class BancoDeDados:
             print(f"Erro ao inserir o registro: {e}")
             print(dados_pessoa_fisica)
 
-    def inserir_cliente_fisico(self, cliente_id, cpf, rg, data_nascimento):
-        self.cursor.execute("INSERT INTO cliente_fisico (id_cliente, cpf, rg, data_nascimento) VALUES (?, ?, ?, ?)",
-                            (cliente_id, cpf, rg, data_nascimento))
-        self.conn.commit()
+    # def inserir_cliente_fisico(self, cliente_id, cpf, rg, data_nascimento):
+    #     self.cursor.execute("INSERT INTO cliente_fisico (id_cliente, cpf, rg, data_nascimento) VALUES (?, ?, ?, ?)",
+    #                         (cliente_id, cpf, rg, data_nascimento))
+    #     self.conn.commit()
         
     def inserir_cliente_fisico(self, cliente_id, dados_fisico):
         try:

@@ -147,10 +147,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             endereco_id_1 = self.data_base.inserir_endereco(dados_endereco)
 
             # Inserir cliente físico
-            cliente_id_1 = self.data_base.inserir_cliente(dados_pessoa_fisica, 1, endereco_id_1)
+            cliente_id_1 = self.data_base.inserir_cliente(
+                dados_pessoa_fisica, 1, endereco_id_1)
 
             # inserir cliente fisico
-            self.data_base.inserir_cliente_fisico(cliente_id_1, dados_cpf_rg_nascimento)
+            self.data_base.inserir_cliente_fisico(
+                cliente_id_1, dados_cpf_rg_nascimento)
+
+            self.limpa_campos()
 
         elif tipo_pessoa == "Pessoa Jurídica":  # CLIENTE JURIDITO = 2
             endereco_id_2 = self.data_base.inserir_endereco(
