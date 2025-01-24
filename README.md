@@ -6,7 +6,7 @@ Pequena aplicação para cadastrar clientes, usando Python e sqlite3 com interfa
 ## Sobre o Projeto:
 >Este projeto foi feito para fins de estudo, desenvolvido pra cadastrar clientes de empresas substituindo assim o uso de planilhas Excel. </br>
 >Cadastro, visualização, pesquisa, alteração e remoção de registro. </br>
->usando banco de dados SQLite3. e com a possibilidade de exportar esses registros em formato excel, pdf.
+>usando banco de dados SQLite3 com a possibilidade de exportar esses registros em formato excel e pdf.
 
 ## Tecnologias e bibliotecas utilizadas.
 - Python 3.12.3
@@ -14,7 +14,7 @@ Pequena aplicação para cadastrar clientes, usando Python e sqlite3 com interfa
 - SQLite3
 
 ## Iniciando o projeto.
-> Ao iniciar o projeto crie um ambiente virtual
+> Baixe o projeto e antes de iniciar crie um ambiente virtual
 - Para Linux.  
 ~~~python
 # Criando ambiente virtual
