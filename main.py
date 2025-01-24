@@ -1,9 +1,9 @@
 import sys
-import requests
+import requests  # type: ignore
 import threading
 from PySide6.QtWidgets import (QMainWindow, QApplication)  # type: ignore
-from PySide6.QtGui import QIcon, QPixmap
-from PySide6.QtCore import QSize
+from PySide6.QtGui import QIcon, QPixmap  # type: ignore
+from PySide6.QtCore import QSize  # type: ignore
 
 from app.ui.ui_main import Ui_MainWindow
 from app.utils.images_local import *

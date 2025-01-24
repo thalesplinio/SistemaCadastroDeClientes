@@ -1,9 +1,11 @@
 # Cadastro de Clientes
 [![NPM](https://img.shields.io/npm/l/react)]((https://github.com/thalesplinio/cadastroDeClientes/blob/main/LICENSE)) </br>
-Pequena aplicação para cadastrar clientes, usando Python e sqlite3 com interface gráfica.
-> Status: Em desenvolvimento.
+> Status: Em desenvolvimento. </br>
+> Plataforma: Windows </br>
 
-## Sobre o Projeto:
+## Pequena aplicação para cadastrar clientes, usando Python e sqlite3 com interface gráfica.
+
+### Sobre o Projeto:
 >Este projeto foi feito para fins de estudo, desenvolvido pra cadastrar clientes de empresas substituindo assim o uso de planilhas Excel. </br>
 >Cadastro, visualização, pesquisa, alteração e remoção de registro. </br>
 >usando banco de dados SQLite3. e com a possibilidade de exportar esses registros em formato excel, pdf.
@@ -15,16 +17,6 @@ Pequena aplicação para cadastrar clientes, usando Python e sqlite3 com interfa
 
 ## Iniciando o projeto.
 > Ao iniciar o projeto crie um ambiente virtual
-- Para Linux.  
-~~~python
-# Criando ambiente virtual
-python3 -m venv venv
-
-# Ativando o ambiente virtual
-source venv/bin/activate
-~~~
-
-- Para Windows
 ~~~python
 # Criando ambiente virtual
 python -m venv venv
@@ -38,6 +30,8 @@ venv/bin/activate
 pip install -r requirements.txt
 ~~~
 - <em>Tudo pronto agora inicie o projeto</em>
+<hr>
+<hr>
 
 ## Apresentação do projeto.
 ### Tela inicial.
