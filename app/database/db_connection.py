@@ -165,7 +165,7 @@ class BancoDeDados:
     #     self.cursor.execute("INSERT INTO cliente_fisico (id_cliente, cpf, rg, data_nascimento) VALUES (?, ?, ?, ?)",
     #                         (cliente_id, cpf, rg, data_nascimento))
     #     self.conn.commit()
-        
+
     def inserir_cliente_fisico(self, cliente_id, dados_fisico):
         try:
             cpf = dados_fisico.get("cpf")
@@ -179,7 +179,19 @@ class BancoDeDados:
             print(f"Erro ao inserir o registro: {e}")
             print(dados_fisico)
 
-    def inserir_cliente_juridico(self, cliente_id, cnpj, ie, data_fundacao):
+    def inserir_cliente_juridico(self, cliente_id, dados_juridicos):
+        try:
+            cnpj = dados_juridicos.get("cnpj")
+            ie = dados_juridicos.get("ie")
+            data_fundacao = dados_juridicos.get("data_fundacao")
+
+            self.cursor.execute("INSERT INTO cliente_juridico (id_cliente, cnpj, ie, data_fundacao) VALUES (?, ?, ?, ?)",
+                                (cliente_id, cnpj, ie, data_fundacao))
+            self.conn.commit()
+        except sqlite3.Error as e:
+            print(f"Erro ao inserir o registro: {e}")
+            print(dados_juridicos)
+
         self.cursor.execute("INSERT INTO cliente_juridico (id_cliente, cnpj, ie, data_fundacao) VALUES (?, ?, ?, ?)",
                             (cliente_id, cnpj, ie, data_fundacao))
         self.conn.commit()

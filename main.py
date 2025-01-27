@@ -1,4 +1,5 @@
 import sys
+import re
 import requests  # type: ignore
 import threading
 from PySide6.QtWidgets import (QMainWindow, QApplication)  # type: ignore
@@ -64,18 +65,20 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def select_type_person(self, index):
         select_item = self.cb_tipo_pessoa.itemText(index)
+        self.le_telefone.setInputMask("(000) 00000-0000;_")
 
         if select_item == "Pessoa Física":
             self.lb_title_cpf_cnpj.setText("CPF:")
             self.lb_title_rg_ie.setText("RG:")
+            self.le_cpf.setInputMask("000.000.000-00;_")
             self.lb_title_date_birth.setText("Data de nascimento:")
-            # reset de cores do combobox - apos selecionar pessoa
-            self.lb_title_type_person.setStyleSheet("color: ;")
+            # reset de cores do combobox - apos selecionar pessoaZ
             self.lb_message_user.setText("")
 
         elif select_item == "Pessoa Jurídica":
             self.lb_title_cpf_cnpj.setText("CNPJ:")
             self.lb_title_rg_ie.setText("IE:")
+            self.le_cpf.setInputMask("00.000.000/0000-00;_")
             self.lb_title_date_birth.setText("Data de abertura:")
             # reset de cores do combobox - apos selecionar pessoa
             self.lb_title_type_person.setStyleSheet("color: ;")
@@ -111,7 +114,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         tipo_pessoa = self.cb_tipo_pessoa.currentText()
 
         dados_endereco = {
-            'cep': self.le_cep.text(),
+            'cep': re.sub(r"[.\-]", "", self.le_cep.text()),
             'rua': self.le_endereco.text().upper().lower(),
             'bairro': self.le_bairro.text().upper().lower(),
             'cidade': self.le_cidade.text().upper().lower(),
@@ -122,23 +125,24 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         dados_pessoa_fisica = {
             'nome_completo': self.le_nome_completo.text().upper().lower(),
             'profissao': self.le_profissao.text().upper().lower(),
-            'telefone': self.le_telefone.text(),
+            'telefone': re.sub(r"[()\-\s]", "", self.le_telefone.text()),
             'email': self.le_email.text().upper().lower(),
         }
         dados_cpf_rg_nascimento = {
-            'cpf': self.le_cpf.text(),
-            'rg': self.le_rg.text(),
+            # Remove pontos e hífens
+            'cpf': re.sub(r"[.\-]", "", self.le_cpf.text()),
+            'rg': re.sub(r"[.\-]", "", self.le_rg.text()),
             'data_nascimento': self.de_data_nascimento.text(),
         }
         dados_pessoa_juridica = {
             'nome_completo': self.le_nome_completo.text().upper().lower(),
             'profissao': self.le_profissao.text().upper().lower(),
-            'telefone': self.le_telefone.text(),
+            'telefone': re.sub(r"[()\-\s]", "", self.le_telefone.text()),
             'email': self.le_email.text().upper().lower(),
         }
         dados_cnpj_ie_data_fundacao = {
-            'cnpj': self.le_cpf.text(),
-            'ie': self.le_rg.text(),
+            'cnpj': re.sub(r"[.\-\\]", "", self.le_cpf.text()),
+            'ie': re.sub(r"[.\-]", "", self.le_rg.text()),
             'data_fundacao': self.de_data_nascimento.text(),
         }
 
@@ -157,16 +161,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.limpa_campos()
 
         elif tipo_pessoa == "Pessoa Jurídica":  # CLIENTE JURIDITO = 2
-            endereco_id_2 = self.data_base.inserir_endereco(
-                '12345-678', 'Centro', 'Avenida Brasil', 'São Paulo', 'SP', 123, 'Apartamento 101')
-            # Inserir um cliente físico - 1 para fisico,  2 para juridico
-            cliente_id_2 = self.data_base.inserir_cliente(
-                'Empresa XYZ', 'Analista de sistemas', '(11) 98765-4321', 'contato@empresa.com', 2, endereco_id_2)
+            # Inserir endereco
+            endereco_id_1 = self.data_base.inserir_endereco(dados_endereco)
+
+            # Inserir cliente físico
+            cliente_id_1 = self.data_base.inserir_cliente(
+                dados_pessoa_juridica, 1, endereco_id_1)
+
             # inserir cliente fisico
             self.data_base.inserir_cliente_juridico(
-                cliente_id_2, '12.345.678/0001-12', '123456789', '2010-01-01')
+                cliente_id_1, dados_cnpj_ie_data_fundacao)
 
-            print("Pessoa jurídica adicionada")
+            self.limpa_campos()
         else:
             self.lb_title_type_person.setStyleSheet("color: red;")
             self.lb_title_type_person.setText("Tipo de Pessoa: *")

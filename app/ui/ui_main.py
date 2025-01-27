@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainMpEVxi.ui'
+## Form generated from reading UI file 'maintMhqeR.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.0
+## Created by: Qt User Interface Compiler version 6.8.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -934,6 +934,7 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(tooltip)
         self.le_cep.setToolTip(QCoreApplication.translate("MainWindow", u"C\u00f3digo de Endere\u00e7amento Postal (CEP)", None))
 #endif // QT_CONFIG(tooltip)
+        self.le_cep.setInputMask("")
         self.lb_separator_8.setText("")
         self.lb_title_uf.setText(QCoreApplication.translate("MainWindow", u"Estado:", None))
         self.lb_img_uf.setText("")
@@ -1020,11 +1021,14 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(tooltip)
         self.le_telefone.setToolTip(QCoreApplication.translate("MainWindow", u"Telefone fixo ou Celular", None))
 #endif // QT_CONFIG(tooltip)
+        self.le_telefone.setInputMask("")
+        self.le_telefone.setText("")
         self.lb_title_cpf_cnpj.setText(QCoreApplication.translate("MainWindow", u"CPF:", None))
         self.lb_img_cpf.setText("")
 #if QT_CONFIG(tooltip)
         self.le_cpf.setToolTip(QCoreApplication.translate("MainWindow", u"Cadastro de Pessoa F\u00edsica (CPF)", None))
 #endif // QT_CONFIG(tooltip)
+        self.le_cpf.setInputMask("")
         self.lb_message_user.setText("")
         self.gb_registros.setTitle(QCoreApplication.translate("MainWindow", u"Registros", None))
         self.gb_pesquisa_nome.setTitle(QCoreApplication.translate("MainWindow", u"Pesquisa por nome", None))

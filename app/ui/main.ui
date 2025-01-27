@@ -109,6 +109,9 @@
                       <property name="toolTip">
                        <string>Código de Endereçamento Postal (CEP)</string>
                       </property>
+                      <property name="inputMask">
+                       <string/>
+                      </property>
                      </widget>
                     </item>
                    </layout>
@@ -978,6 +981,12 @@ QPushButton:hover{
                       <property name="toolTip">
                        <string>Telefone fixo ou Celular</string>
                       </property>
+                      <property name="inputMask">
+                       <string/>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
                      </widget>
                     </item>
                    </layout>
@@ -1019,6 +1028,9 @@ QPushButton:hover{
                      <widget class="QLineEdit" name="le_cpf">
                       <property name="toolTip">
                        <string>Cadastro de Pessoa Física (CPF)</string>
+                      </property>
+                      <property name="inputMask">
+                       <string/>
                       </property>
                      </widget>
                     </item>
