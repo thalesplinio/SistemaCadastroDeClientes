@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'maintMhqeR.ui'
+## Form generated from reading UI file 'mainxelIqC.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.1
+## Created by: Qt User Interface Compiler version 6.9.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -691,6 +691,23 @@ class Ui_MainWindow(object):
         self.gb_registros.setObjectName(u"gb_registros")
         self.gridLayout_7 = QGridLayout(self.gb_registros)
         self.gridLayout_7.setObjectName(u"gridLayout_7")
+        self.tw_tabela_registros = QTableWidget(self.gb_registros)
+        self.tw_tabela_registros.setObjectName(u"tw_tabela_registros")
+
+        self.gridLayout_7.addWidget(self.tw_tabela_registros, 2, 0, 1, 8)
+
+        self.gb_pesquisa_rg_cpf = QGroupBox(self.gb_registros)
+        self.gb_pesquisa_rg_cpf.setObjectName(u"gb_pesquisa_rg_cpf")
+        self.gridLayout_9 = QGridLayout(self.gb_pesquisa_rg_cpf)
+        self.gridLayout_9.setObjectName(u"gridLayout_9")
+        self.le_pesquisa_rg_cpf = QLineEdit(self.gb_pesquisa_rg_cpf)
+        self.le_pesquisa_rg_cpf.setObjectName(u"le_pesquisa_rg_cpf")
+
+        self.gridLayout_9.addWidget(self.le_pesquisa_rg_cpf, 0, 0, 1, 1)
+
+
+        self.gridLayout_7.addWidget(self.gb_pesquisa_rg_cpf, 0, 1, 1, 1)
+
         self.gb_pesquisa_nome = QGroupBox(self.gb_registros)
         self.gb_pesquisa_nome.setObjectName(u"gb_pesquisa_nome")
         self.gridLayout_8 = QGridLayout(self.gb_pesquisa_nome)
@@ -702,6 +719,58 @@ class Ui_MainWindow(object):
 
 
         self.gridLayout_7.addWidget(self.gb_pesquisa_nome, 0, 0, 1, 1)
+
+        self.lb_titulo_total_registro = QLabel(self.gb_registros)
+        self.lb_titulo_total_registro.setObjectName(u"lb_titulo_total_registro")
+        self.lb_titulo_total_registro.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+
+        self.gridLayout_7.addWidget(self.lb_titulo_total_registro, 1, 5, 1, 1)
+
+        self.btn_export_excel = QPushButton(self.gb_registros)
+        self.btn_export_excel.setObjectName(u"btn_export_excel")
+        self.btn_export_excel.setMinimumSize(QSize(140, 35))
+        self.btn_export_excel.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.btn_export_excel.setStyleSheet(u"QPushButton{\n"
+"	background-color: rgb(36, 74, 109);\n"
+"	color: rgb(255, 255, 255);\n"
+"	border-radius: 8px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: #245b75;\n"
+"}")
+        icon2 = QIcon()
+        icon2.addFile(u"../resources/img/excel.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_export_excel.setIcon(icon2)
+
+        self.gridLayout_7.addWidget(self.btn_export_excel, 0, 6, 1, 1)
+
+        self.lb_qtd_registros = QLabel(self.gb_registros)
+        self.lb_qtd_registros.setObjectName(u"lb_qtd_registros")
+
+        self.gridLayout_7.addWidget(self.lb_qtd_registros, 1, 7, 1, 1)
+
+        self.lb_desc_clica_duas_vezes = QLabel(self.gb_registros)
+        self.lb_desc_clica_duas_vezes.setObjectName(u"lb_desc_clica_duas_vezes")
+
+        self.gridLayout_7.addWidget(self.lb_desc_clica_duas_vezes, 1, 1, 1, 1)
+
+        self.btn_export_pdf = QPushButton(self.gb_registros)
+        self.btn_export_pdf.setObjectName(u"btn_export_pdf")
+        self.btn_export_pdf.setMinimumSize(QSize(140, 35))
+        self.btn_export_pdf.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.btn_export_pdf.setStyleSheet(u"QPushButton{\n"
+"	background-color: rgb(36, 74, 109);\n"
+"	color: rgb(255, 255, 255);\n"
+"	border-radius: 8px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: #245b75;\n"
+"}")
+        icon3 = QIcon()
+        icon3.addFile(u"../resources/img/pdf.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_export_pdf.setIcon(icon3)
+
+        self.gridLayout_7.addWidget(self.btn_export_pdf, 0, 4, 1, 2)
 
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
@@ -734,9 +803,9 @@ class Ui_MainWindow(object):
 "QPushButton:hover{\n"
 "	background-color: #245b75;\n"
 "}")
-        icon2 = QIcon()
-        icon2.addFile(u"../../assets/img/repeat.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_update_table.setIcon(icon2)
+        icon4 = QIcon()
+        icon4.addFile(u"../../assets/img/repeat.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_update_table.setIcon(icon4)
         self.btn_update_table.setIconSize(QSize(20, 20))
 
         self.horizontalLayout.addWidget(self.btn_update_table)
@@ -744,46 +813,9 @@ class Ui_MainWindow(object):
 
         self.gridLayout_7.addLayout(self.horizontalLayout, 1, 0, 1, 1)
 
-        self.gb_pesquisa_rg_cpf = QGroupBox(self.gb_registros)
-        self.gb_pesquisa_rg_cpf.setObjectName(u"gb_pesquisa_rg_cpf")
-        self.gridLayout_9 = QGridLayout(self.gb_pesquisa_rg_cpf)
-        self.gridLayout_9.setObjectName(u"gridLayout_9")
-        self.le_pesquisa_rg_cpf = QLineEdit(self.gb_pesquisa_rg_cpf)
-        self.le_pesquisa_rg_cpf.setObjectName(u"le_pesquisa_rg_cpf")
-
-        self.gridLayout_9.addWidget(self.le_pesquisa_rg_cpf, 0, 0, 1, 1)
-
-
-        self.gridLayout_7.addWidget(self.gb_pesquisa_rg_cpf, 0, 1, 1, 1)
-
         self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.gridLayout_7.addItem(self.horizontalSpacer_3, 0, 3, 1, 1)
-
-        self.lb_desc_clica_duas_vezes = QLabel(self.gb_registros)
-        self.lb_desc_clica_duas_vezes.setObjectName(u"lb_desc_clica_duas_vezes")
-
-        self.gridLayout_7.addWidget(self.lb_desc_clica_duas_vezes, 1, 1, 1, 1)
-
-        self.horizontalSpacer_4 = QSpacerItem(100, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
-
-        self.gridLayout_7.addItem(self.horizontalSpacer_4, 0, 4, 1, 1)
-
-        self.lb_qtd_registros = QLabel(self.gb_registros)
-        self.lb_qtd_registros.setObjectName(u"lb_qtd_registros")
-
-        self.gridLayout_7.addWidget(self.lb_qtd_registros, 1, 4, 1, 1)
-
-        self.lb_titulo_total_registro = QLabel(self.gb_registros)
-        self.lb_titulo_total_registro.setObjectName(u"lb_titulo_total_registro")
-        self.lb_titulo_total_registro.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
-
-        self.gridLayout_7.addWidget(self.lb_titulo_total_registro, 1, 3, 1, 1)
-
-        self.tw_tabela_registros = QTableWidget(self.gb_registros)
-        self.tw_tabela_registros.setObjectName(u"tw_tabela_registros")
-
-        self.gridLayout_7.addWidget(self.tw_tabela_registros, 2, 0, 1, 5)
+        self.gridLayout_7.addItem(self.horizontalSpacer_3, 0, 2, 1, 1)
 
 
         self.gridLayout_6.addWidget(self.gb_registros, 1, 0, 1, 1)
@@ -819,9 +851,9 @@ class Ui_MainWindow(object):
 "QPushButton:hover{\n"
 "	background-color: #245b75;\n"
 "}")
-        icon3 = QIcon()
-        icon3.addFile(u"../resources/img/house.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_home.setIcon(icon3)
+        icon5 = QIcon()
+        icon5.addFile(u"../resources/img/house.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_home.setIcon(icon5)
         self.btn_home.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_32.addWidget(self.btn_home)
@@ -838,9 +870,9 @@ class Ui_MainWindow(object):
 "QPushButton:hover{\n"
 "	background-color: #245b75;\n"
 "}")
-        icon4 = QIcon()
-        icon4.addFile(u"../resources/img/folder_1.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_registrations.setIcon(icon4)
+        icon6 = QIcon()
+        icon6.addFile(u"../resources/img/folder_1.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_registrations.setIcon(icon6)
         self.btn_registrations.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_32.addWidget(self.btn_registrations)
@@ -1031,10 +1063,19 @@ class Ui_MainWindow(object):
         self.le_cpf.setInputMask("")
         self.lb_message_user.setText("")
         self.gb_registros.setTitle(QCoreApplication.translate("MainWindow", u"Registros", None))
+        self.gb_pesquisa_rg_cpf.setTitle(QCoreApplication.translate("MainWindow", u"Pesquisa por RG / CPF / GNPJ / IE", None))
+#if QT_CONFIG(tooltip)
+        self.le_pesquisa_rg_cpf.setToolTip(QCoreApplication.translate("MainWindow", u"Informe um RG ou CPF para pesquisar", None))
+#endif // QT_CONFIG(tooltip)
         self.gb_pesquisa_nome.setTitle(QCoreApplication.translate("MainWindow", u"Pesquisa por nome", None))
 #if QT_CONFIG(tooltip)
         self.le_pesquisa_nome.setToolTip(QCoreApplication.translate("MainWindow", u"Informe um nome para pesquisa", None))
 #endif // QT_CONFIG(tooltip)
+        self.lb_titulo_total_registro.setText(QCoreApplication.translate("MainWindow", u"Total de registros:", None))
+        self.btn_export_excel.setText(QCoreApplication.translate("MainWindow", u"Exportar para Excel", None))
+        self.lb_qtd_registros.setText(QCoreApplication.translate("MainWindow", u"...", None))
+        self.lb_desc_clica_duas_vezes.setText(QCoreApplication.translate("MainWindow", u"Clique duas vezes em um registro para mais detalhes", None))
+        self.btn_export_pdf.setText(QCoreApplication.translate("MainWindow", u"Exportar para PDF", None))
 #if QT_CONFIG(tooltip)
         self.btn_remove_registration.setToolTip(QCoreApplication.translate("MainWindow", u"Remover revistro selecionado", None))
 #endif // QT_CONFIG(tooltip)
@@ -1043,13 +1084,6 @@ class Ui_MainWindow(object):
         self.btn_update_table.setToolTip(QCoreApplication.translate("MainWindow", u"Atualizar tabela", None))
 #endif // QT_CONFIG(tooltip)
         self.btn_update_table.setText(QCoreApplication.translate("MainWindow", u"Atualiar tabela", None))
-        self.gb_pesquisa_rg_cpf.setTitle(QCoreApplication.translate("MainWindow", u"Pesquisa por RG / CPF", None))
-#if QT_CONFIG(tooltip)
-        self.le_pesquisa_rg_cpf.setToolTip(QCoreApplication.translate("MainWindow", u"Informe um RG ou CPF para pesquisar", None))
-#endif // QT_CONFIG(tooltip)
-        self.lb_desc_clica_duas_vezes.setText(QCoreApplication.translate("MainWindow", u"Clique duas vezes em um registro para mais detalhes", None))
-        self.lb_qtd_registros.setText(QCoreApplication.translate("MainWindow", u"...", None))
-        self.lb_titulo_total_registro.setText(QCoreApplication.translate("MainWindow", u"Total de registros:", None))
 #if QT_CONFIG(tooltip)
         self.btn_home.setToolTip(QCoreApplication.translate("MainWindow", u"P\u00e1gina inicial de cadastro", None))
 #endif // QT_CONFIG(tooltip)

@@ -26,6 +26,8 @@ ICON_ADDRESS = IMAGES_DIR / "sign.png"
 ICON_NUMBER = IMAGES_DIR / "sign-1.png"
 ICON_UF = IMAGES_DIR / "map.png"
 ICON_CITY = IMAGES_DIR / "map-location.png"
+ICON_EXPORT_PDF = IMAGES_DIR / "pdf.png"
+ICON_EXPORT_EXCEL = IMAGES_DIR / "excel.png"
 
 
 if __name__ == "__main__":

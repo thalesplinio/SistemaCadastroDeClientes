@@ -210,6 +210,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.btn_clean_fields.setIcon(QPixmap(ICON_CLEAN_FIELDS))
         self.btn_remove_registration.setIcon(QPixmap(ICON_CLEAN_FIELDS))
         self.btn_update_table.setIcon(QPixmap(ICON_UPDATE_TABLE))
+        self.btn_export_pdf.setIcon(QPixmap(ICON_EXPORT_PDF))
+        self.btn_export_excel.setIcon(QPixmap(ICON_EXPORT_EXCEL))
 
 
 if __name__ == "__main__":
