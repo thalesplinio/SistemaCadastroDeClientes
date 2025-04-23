@@ -4,7 +4,7 @@
 [![Maintainer](https://img.shields.io/badge/Licence-MIT-blue)](https://github.com/thalesplinio/SistemaCadastroDeClientes/blob/main/LICENSE)
 
 <p align="center">
-    <img src="imgapp/01img.png" alt="Tela inicial do site já preenchida" width="600px"/>
+    <img src="imgapp/01img.png" alt="Tela inicial do site já preenchida" width="900px"/>
 </p>
 
 ![Python](https://img.shields.io/badge/python-FFD642?style=for-the-badge&logo=python&logoColor=3670A0)
@@ -63,7 +63,7 @@ pip install -r requirements.txt
 >   E se o usuário preencher um cep que não for válido nada acontece.
 
 <p align="center">
-    <img src="imgapp/01img.png" alt="Tela inicial do site já preenchida" width="600px"/>
+    <img src="imgapp/01img.png" alt="Tela inicial do site já preenchida" width="900px"/>
 </p>
 
 ### 📌 Tela de registros.
@@ -75,7 +75,7 @@ pip install -r requirements.txt
 > - Ao dar um clique duplo sobre a tabele abre-se um popup para mais informações.
 
 <p align="center">
-    <img src="imgapp/02img.png" alt="Tela inicial do site já preenchida" width="600px"/>
+    <img src="imgapp/02img.png" alt="Tela inicial do site já preenchida" width="900px"/>
 </p>
 
 Autor: Thales Plinio
